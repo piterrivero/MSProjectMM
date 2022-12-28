@@ -24,7 +24,7 @@ spring:
           uri: lb://disc-service
           predicates:
             - Path=/disc/**
-        - id: moto-service
-          uri: lb://moto-service
+        - id: genre-service
+          uri: lb://genre-service
           predicates:
-            - Path=/moto/**
+            - Path=/genre/**

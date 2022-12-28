@@ -16,3 +16,5 @@ spring:
       host: localhost
       port: 27002
       database: disc
+  application:
+    zipkin: http://localhost:9411

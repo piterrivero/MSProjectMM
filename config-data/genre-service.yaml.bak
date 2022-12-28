@@ -16,3 +16,5 @@ spring:
       host: localhost
       port: 27003
       database: genre
+  application:
+    zipkin: http://localhost:9411
