@@ -1,0 +1,7 @@
+com\genre\service\repository\GenreRepository.class
+com\genre\service\controller\GenreController.class
+com\genre\service\entity\DatabaseSequence.class
+com\genre\service\service\SequenceGeneratorService.class
+com\genre\service\entity\Genre.class
+com\genre\service\GenreServiceApplication.class
+com\genre\service\service\GenreService.class

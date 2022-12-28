@@ -1,0 +1,11 @@
+com\band\service\BandServiceApplication.class
+com\band\service\controller\BandController.class
+com\band\service\feignclients\GenreFeignClient.class
+com\band\service\entity\DatabaseSequence.class
+com\band\service\feignclients\DiscFeignClient.class
+com\band\service\service\BandService.class
+com\band\service\service\SequenceGeneratorService.class
+com\band\service\entity\Band.class
+com\band\service\repository\BandRepository.class
+model\Disc.class
+model\Genre.class

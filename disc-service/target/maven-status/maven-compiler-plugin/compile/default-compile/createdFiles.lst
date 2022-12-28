@@ -1,0 +1,7 @@
+com\disc\service\repository\DiscRepository.class
+com\disc\service\entity\DatabaseSequence.class
+com\disc\service\controller\DiscController.class
+com\disc\service\DiscServiceApplication.class
+com\disc\service\entity\Disc.class
+com\disc\service\service\DiscService.class
+com\disc\service\service\SequenceGeneratorService.class

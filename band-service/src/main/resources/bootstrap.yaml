@@ -1,6 +1,8 @@
 spring:
   application:
     name: band-service
+  profiles:
+    active: docker
   cloud:
     config:
       enabled: true
