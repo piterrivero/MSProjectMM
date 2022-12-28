@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-          default-label: zipkin
-          uri: https://github.com/piterrivero/MSProject
+          default-label: master
+          uri: https://github.com/piterrivero/MSProjectMM
           search-paths: config-data
   application:
     name: config-service
