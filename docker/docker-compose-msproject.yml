@@ -39,14 +39,12 @@ services:
   config-service:
     image: piterrivero/config-service:latest
     container_name: config-service
-    pull_policy: always
     ports:
       - "8000:8000"
 
   eureka-service:
     image: piterrivero/eureka-service:latest
     container_name: eureka-service
-    pull_policy: always
     ports:
       - "8761:8761"
     environment:
@@ -58,7 +56,6 @@ services:
   gateway-service:
     image: piterrivero/gateway-service:latest
     container_name: gateway-service
-    pull_policy: always
     ports:
       - "8080:8080"
     expose:
@@ -74,9 +71,6 @@ services:
   band-service:
     image: piterrivero/band-service:latest
     container_name: band-service
-    pull_policy: always
-    ports:
-      - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -89,9 +83,6 @@ services:
   disc-service:
     image: piterrivero/disc-service:latest
     container_name: disc-service
-    pull_policy: always
-    ports:
-      - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -104,9 +95,6 @@ services:
   genre-service:
     image: piterrivero/genre-service:latest
     container_name: genre-service
-    pull_policy: always
-    ports:
-      - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
