@@ -4,10 +4,4 @@ spring:
   cloud:
     config:
       enabled: true
-      uri: http://config-service:8000
-      
-spring:
-  profiles: docker
-  cloud:
-    config:
-      uri: http://config-service:8000
+      uri: http://localhost:8000 
