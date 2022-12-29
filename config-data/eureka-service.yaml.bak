@@ -9,8 +9,6 @@ eureka:
       default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
       
 spring:      
-  application:
-    name: eureka-service
   cloud:
     config:
       enabled: true

@@ -47,8 +47,8 @@ services:
     container_name: eureka-service
     ports:
       - "8761:8761"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
+    #environment:
+    #  - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - config-service
       - zipkin
@@ -61,7 +61,7 @@ services:
     expose:
       - "8080"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker
+      #- SPRING_PROFILES_ACTIVE=docker
       - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY= TRACE
     depends_on:
       - config-service
@@ -71,8 +71,8 @@ services:
   band-service:
     image: piterrivero/band-service:latest
     container_name: band-service
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
+    #environment:
+    #  - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - mongodb-band
       - config-service 
@@ -83,8 +83,8 @@ services:
   disc-service:
     image: piterrivero/disc-service:latest
     container_name: disc-service
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
+    #environment:
+    #  - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - mongodb-disc
       - config-service
@@ -95,8 +95,8 @@ services:
   genre-service:
     image: piterrivero/genre-service:latest
     container_name: genre-service
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
+    #environment:
+    #  - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - mongodb-genre
       - config-service
