@@ -1,41 +1,5 @@
 version: "3.9"
 services:
-  mongodb-band:
-    container_name: mongodb-band
-    image: bitnami/mongodb:4.0.27
-    volumes:
-      - mongodb-band-data:/bitnami/mongodb/data
-      - ../../mongodb/mongodump:/mongodump
-    ports:
-      - "27001:27017"
-    restart: on-failure:10
-
-  mongodb-disc:
-    container_name: mongodb-disc
-    image: bitnami/mongodb:4.0.27
-    volumes:
-      - mongodb-disc-data:/bitnami/mongodb/data
-      - ../../mongodb/mongodump:/mongodump
-    ports:
-      - "27002:27017"
-    restart: on-failure:10
-
-  mongodb-genre:
-    container_name: mongodb-genre
-    image: bitnami/mongodb:4.0.27
-    volumes:
-      - mongodb-genre-data:/bitnami/mongodb/data
-      - ../../mongodb/mongodump:/mongodump
-    ports:
-      - "27003:27017"
-    restart: on-failure:10
-
-  zipkin:
-    container_name: zipkin
-    image: openzipkin/zipkin
-    ports:
-      - "9411:9411"
-
   config-service:
     image: piterrivero/config-service:latest
     container_name: config-service
@@ -51,7 +15,6 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - config-service
-      - zipkin
       
   gateway-service:
     image: piterrivero/gateway-service:latest
@@ -65,7 +28,6 @@ services:
       - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY= TRACE
     depends_on:
       - config-service
-      - zipkin
       - eureka-service    
       
   band-service:
@@ -74,9 +36,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
-      - mongodb-band
       - config-service 
-      - zipkin
       - eureka-service
       - gateway-service
       
@@ -86,9 +46,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
-      - mongodb-disc
       - config-service
-      - zipkin
       - eureka-service
       - gateway-service
       
@@ -98,13 +56,6 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
-      - mongodb-genre
       - config-service
-      - zipkin
       - eureka-service
       - gateway-service
-
-volumes:
-  mongodb-band-data:
-  mongodb-disc-data:
-  mongodb-genre-data:
