@@ -9,10 +9,6 @@ eureka:
 spring:
   application:
     name: disc-service
-  cloud:
-    config:
-      enabled: true
-      uri: http://config-service:8000
   data:
     mongodb:
       host: mongodb-disc

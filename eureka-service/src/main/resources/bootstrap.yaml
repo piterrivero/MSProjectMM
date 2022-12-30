@@ -1,7 +1,3 @@
 spring:
   application:
     name: eureka-service
-  cloud:
-    config:
-      enabled: true
-      uri: http://config-service:8123
