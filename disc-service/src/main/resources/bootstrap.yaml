@@ -1,3 +1,9 @@
 spring:
   application:
     name: disc-service
+      
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-service:8888
