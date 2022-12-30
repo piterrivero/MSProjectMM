@@ -11,10 +11,6 @@ eureka:
       instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 spring:
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8888
   data:
     mongodb:
       host: localhost

@@ -40,7 +40,7 @@ services:
     image: piterrivero/config-service:latest
     container_name: config-service
     ports:
-      - "8000:8000"
+      - "8888:8888"
 
   eureka-service:
     image: piterrivero/eureka-service:latest
