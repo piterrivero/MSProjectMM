@@ -9,7 +9,6 @@ eureka:
 spring:
   application:
     name: band-service
-  spring:      
   cloud:
     config:
       enabled: true

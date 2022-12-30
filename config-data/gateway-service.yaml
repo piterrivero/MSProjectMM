@@ -10,10 +10,6 @@ eureka:
       hostname: localhost
 
 spring:
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8000
     gateway:
       discovery:
         locator:
