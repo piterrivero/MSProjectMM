@@ -1,19 +1,17 @@
-server:
-  port: ${PORT:${SERVER_PORT:0}}
-
 eureka:
   client:
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       default-zone: http://eureka-service:8761/eureka
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 spring:
-  application:
-    name: genre-service
   data:
     mongodb:
       host: mongodb-genre
       port: 27003
       database: genre
-  spring:
-    zipkin:
-      base-url: http://zipkin:9411
+  application:
+    zipkin: http://zipkin:9411
