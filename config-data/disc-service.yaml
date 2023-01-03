@@ -6,15 +6,15 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://localhost:8761/eureka
+      default-zone: http://eureka-service:8761/eureka
     instance:
       instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 spring:
   data:
     mongodb:
-      host: localhost
+      host: mongodb-disc
       port: 27002
       database: disc
   application:
-    zipkin: http://localhost:9411
+    zipkin: http://zipkin:9411
