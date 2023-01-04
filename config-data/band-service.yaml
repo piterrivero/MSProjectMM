@@ -1,5 +1,6 @@
 server:
   port: ${PORT:${SERVER_PORT:0}}
+  #forward-headers-strategy: framework 
   
 eureka:
   client:
@@ -39,3 +40,10 @@ resilience4j.circuitbreaker:
             waitDurationInOpenState: 5s
             failureRateThreshold: 50
             eventConsumerBufferSize: 10
+            
+springdoc:
+  swagger-ui:
+    path: /band/swagger-ui.html
+  api-docs:
+    path: /band/v3/api-docs
+  packagesToScan: com.band.service.controller

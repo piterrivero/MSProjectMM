@@ -18,3 +18,10 @@ spring:
       database: genre
   application:
     zipkin: http://localhost:9411
+    
+springdoc:
+  swagger-ui:
+    path: /genre/swagger-ui.html
+  api-docs:
+    path: /genre/v3/api-docs
+  packagesToScan: com.genre.service.controller

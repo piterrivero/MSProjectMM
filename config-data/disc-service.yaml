@@ -18,3 +18,10 @@ spring:
       database: disc
   application:
     zipkin: http://localhost:9411
+    
+springdoc:
+  swagger-ui:
+    path: /disc/swagger-ui.html
+  api-docs:
+    path: /disc/v3/api-docs
+  packagesToScan: com.disc.service.controller

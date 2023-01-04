@@ -28,3 +28,9 @@ spring:
           uri: lb://genre-service
           predicates:
             - Path=/genre/**
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
