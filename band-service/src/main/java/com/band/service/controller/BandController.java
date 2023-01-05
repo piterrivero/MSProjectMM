@@ -16,6 +16,7 @@ import com.band.service.entity.Band;
 import com.band.service.service.BandService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
 import model.Disc;
 import model.Genre;
@@ -71,7 +72,7 @@ public class BandController {
 		return new ResponseEntity("The band can not be saved in this moment, please try later", HttpStatus.OK);
 	}
 	
-	@CircuitBreaker(name = "discCB",fallbackMethod = "fallBackGetDiscsByIdBand")
+	@Retry(name = "discCB", fallbackMethod = "fallBackGetDiscsByIdBand")
 	@GetMapping("/disc/{idBand}")
 	public ResponseEntity<List<Disc>> getDiscsByIdBand(@PathVariable("idBand") long idBand){
 		log.info("Have been called the getDiscsByIdBand method");

@@ -20,7 +20,8 @@ spring:
   application:
     zipkin: http://localhost:9411
       
-resilience4j.circuitbreaker:
+resilience4j:
+  circuitbreaker:
     instances:
         discCB:
             registerHealthIndicator: true
@@ -40,7 +41,12 @@ resilience4j.circuitbreaker:
             waitDurationInOpenState: 5s
             failureRateThreshold: 50
             eventConsumerBufferSize: 10
-            
+  retry:
+    instances:
+      discCB:
+        maxRetryAttempts: 3
+        waitDuration: 10s
+              
 springdoc:
   swagger-ui:
     path: /band/swagger-ui.html
