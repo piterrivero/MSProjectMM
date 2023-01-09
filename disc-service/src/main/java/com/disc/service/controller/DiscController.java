@@ -25,8 +25,8 @@ public class DiscController {
 	private DiscService discService;
 	
 	@GetMapping
-	public ResponseEntity<List<Disc>> listBands(){
-		log.info("Have been called the listBands method");
+	public ResponseEntity<List<Disc>> listDisc(){
+		log.info("Have been called the listDisc method");
 		List<Disc> discs = discService.getAll();
 		if (discs.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -34,9 +34,19 @@ public class DiscController {
 		return ResponseEntity.ok(discs);
 	}
 	
+	@GetMapping("/live")
+	public ResponseEntity<List<Disc>> listLiveDiscs(){
+		log.info("Have been called the listLiveDiscs method");
+		List<Disc> discs = discService.getLiveDiscs();
+		if (discs.isEmpty()) {
+			return ResponseEntity.noContent().build();
+		}
+		return ResponseEntity.ok(discs);
+	}
+	
 	@GetMapping("/{id}")
-	public ResponseEntity<Disc> getBand(@PathVariable("id") int id){
-		log.info("Have been called the getBand method");
+	public ResponseEntity<Disc> getDisc(@PathVariable("id") int id){
+		log.info("Have been called the getDisc method");
 		Disc disc = discService.getBandById(id);
 		if (disc == null) {
 			return ResponseEntity.notFound().build();
@@ -52,8 +62,8 @@ public class DiscController {
 	}
 	
 	@GetMapping("/band/{idBand}")
-	public ResponseEntity<List<Disc>> getBandsById(@PathVariable("idBand") long idBand){
-		log.info("Have been called the getBandsById method");
+	public ResponseEntity<List<Disc>> getDiscByIdBand(@PathVariable("idBand") long idBand){
+		log.info("Have been called the getDiscByIdBand method");
 		List<Disc> disc = discService.getDiscsByIdBand(idBand);
 		if (disc == null) {
 			return ResponseEntity.notFound().build();

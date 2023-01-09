@@ -56,5 +56,4 @@ public class BandService {
 		List<Disc> discs = discFeignClient.listDiscsByIdBand(id);
 		return discs;
 	}
-	
 }

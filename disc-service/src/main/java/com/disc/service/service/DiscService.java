@@ -1,6 +1,7 @@
 package com.disc.service.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -25,6 +26,13 @@ public class DiscService {
 	
 	public List<Disc> getAll(){
 		return discRepository.findAll();
+	}
+	
+	public List<Disc> getLiveDiscs(){
+		return discRepository.findAll()
+						.stream()
+						.filter(x -> x.getTitle().toUpperCase().contains("LIVE"))
+						.collect(Collectors.toList());
 	}
 	
 	public Disc getBandById(int id) {
