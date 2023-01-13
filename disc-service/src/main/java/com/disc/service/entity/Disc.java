@@ -4,12 +4,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Document(collection = "disc")
 @Getter
 @Setter
+@Builder
 public class Disc {
 	
 	@Transient

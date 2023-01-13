@@ -21,7 +21,7 @@ public class GenreService {
 		return genreRepository.findAll();
 	}
 	
-	public Genre getBandById(int id) {
+	public Genre getGenreById(int id) {
 		return genreRepository.findById(id).orElse(null);
 	}
 	

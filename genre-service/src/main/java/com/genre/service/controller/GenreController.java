@@ -37,7 +37,7 @@ public class GenreController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Genre> getGenre(@PathVariable("id") int id){
 		log.info("Have been called the getGenre method");
-		Genre genre = genreService.getBandById(id);
+		Genre genre = genreService.getGenreById(id);
 		if (genre == null) {
 			return ResponseEntity.notFound().build();
 		}
