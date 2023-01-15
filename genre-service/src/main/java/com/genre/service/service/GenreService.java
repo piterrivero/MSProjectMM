@@ -31,4 +31,15 @@ public class GenreService {
 		return newGenre;
 	}
 	
+	public Genre update(int id, Genre genre) {
+		Genre toUpdate =  getGenreById(id);
+		toUpdate.setGenre(genre.getGenre());
+		Genre updated = genreRepository.save(toUpdate);
+		return updated;
+	}
+	
+	public void delete(int id) {
+		genreRepository.deleteById(id);
+	}
+	
 }

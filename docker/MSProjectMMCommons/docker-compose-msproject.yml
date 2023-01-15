@@ -29,6 +29,36 @@ services:
     ports:
       - "27003:27017"
     restart: on-failure:10
+    
+  mongodb-customer:
+    container_name: mongodb-customer
+    image: bitnami/mongodb:4.0.27
+    volumes:
+      - mongodb-customer-data:/bitnami/mongodb/data
+      - ../../mongodb/mongodump:/mongodump
+    ports:
+      - "27004:27017"
+    restart: on-failure:10
+    
+  mongodb-order:
+    container_name: mongodb-order
+    image: bitnami/mongodb:4.0.27
+    volumes:
+      - mongodb-order-data:/bitnami/mongodb/data
+      - ../../mongodb/mongodump:/mongodump
+    ports:
+      - "27005:27017"
+    restart: on-failure:10
+    
+  mongodb-payment:
+    container_name: mongodb-payment
+    image: bitnami/mongodb:4.0.27
+    volumes:
+      - mongodb-payment-data:/bitnami/mongodb/data
+      - ../../mongodb/mongodump:/mongodump
+    ports:
+      - "27006:27017"
+    restart: on-failure:10
 
   zipkin:
     container_name: zipkin
@@ -40,3 +70,6 @@ volumes:
   mongodb-band-data:
   mongodb-disc-data:
   mongodb-genre-data:
+  mongodb-customer-data:
+  mongodb-order-data:
+  mongodb-payment-data:

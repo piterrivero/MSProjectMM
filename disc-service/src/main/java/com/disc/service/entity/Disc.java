@@ -25,5 +25,9 @@ public class Disc {
 	private String title;
 	
 	private String year;
+	
+	private long price;
+	
+	private int stock;
 
 }

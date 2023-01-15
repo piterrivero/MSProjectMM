@@ -2,11 +2,14 @@ package com.disc.service.controller;
 
 import java.util.List;
 
+import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,7 +50,7 @@ public class DiscController {
 	@GetMapping("/{id}")
 	public ResponseEntity<Disc> getDisc(@PathVariable("id") int id){
 		log.info("Have been called the getDisc method");
-		Disc disc = discService.getBandById(id);
+		Disc disc = discService.getDiscById(id);
 		if (disc == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -69,6 +72,27 @@ public class DiscController {
 			return ResponseEntity.notFound().build();
 		}
 		return ResponseEntity.ok(disc);
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Disc> updateDisc(@PathVariable("id") int id, @RequestBody Disc disc){
+		log.info("Have been called the updateDisc method");
+		if (disc == null) {
+			return ResponseEntity.notFound().build();
+		}
+		Disc newDisc = discService.update(id, disc);
+		return ResponseEntity.ok(newDisc);
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<HttpStatus> deleteDisc(@PathVariable("id") int id){
+		log.info("Have been called the deleteDisc method");
+		Disc disc = discService.getDiscById(id);
+		if (disc == null) {
+			return ResponseEntity.notFound().build();
+		}
+		discService.delete(id);
+		return new ResponseEntity<>(org.springframework.http.HttpStatus.OK);
 	}
 	
 }

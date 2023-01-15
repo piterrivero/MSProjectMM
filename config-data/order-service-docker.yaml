@@ -1,0 +1,17 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://eureka-service:8761/eureka
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+spring:
+  data:
+    mongodb:
+      host: mongodb-order
+      port: 27005
+      database: order
+  application:
+    zipkin: http://zipkin:9411

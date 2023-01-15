@@ -35,7 +35,7 @@ public class DiscService {
 						.collect(Collectors.toList());
 	}
 	
-	public Disc getBandById(int id) {
+	public Disc getDiscById(int id) {
 		return discRepository.findById(id).orElse(null);
 	}
 	
@@ -50,6 +50,21 @@ public class DiscService {
 		query.addCriteria(Criteria.where("idBand").is(idBand));
 		List<Disc> discs = mongoTemplate.find(query, Disc.class);
 		return discs;
+	}
+	
+	public Disc update(int id, Disc disc) {
+		Disc toUpdate =  getDiscById(id);
+		toUpdate.setIdBand(disc.getIdBand());
+		toUpdate.setPrice(disc.getPrice());
+		toUpdate.setStock(disc.getStock());
+		toUpdate.setTitle(disc.getTitle());
+		toUpdate.setYear(disc.getYear());
+		Disc updated = discRepository.save(toUpdate);
+		return updated;
+	}
+	
+	public void delete(int id) {
+		discRepository.deleteById(id);
 	}
 	
 }

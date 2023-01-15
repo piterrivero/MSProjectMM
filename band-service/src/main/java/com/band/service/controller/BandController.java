@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -96,6 +98,27 @@ public class BandController {
 	public ResponseEntity<Genre> fallBackGetGenreById(@PathVariable("idGenre") long idGenre, RuntimeException excepcion){
 		log.info("Have been called the fallBackGetGenreById method");
 		return new ResponseEntity("Right now the genre can not be found, please try later", HttpStatus.OK);
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Band> updateBand(@PathVariable("id") int id, @RequestBody Band band){
+		log.info("Have been called the updateBand method");
+		if (band == null) {
+			return ResponseEntity.notFound().build();
+		}
+		Band newBand = bandService.update(id, band);
+		return ResponseEntity.ok(newBand);
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<HttpStatus> deleteBand(@PathVariable("id") int id){
+		log.info("Have been called the deleteBand method");
+		Band band = bandService.getBandById(id);
+		if (band == null) {
+			return ResponseEntity.notFound().build();
+		}
+		bandService.delete(id);
+		return new ResponseEntity<>(org.springframework.http.HttpStatus.OK);
 	}
 	
 }

@@ -42,9 +42,9 @@ class DiscServiceApplicationTests {
 	@BeforeAll
 	static void init() {
 		discListMock = new ArrayList<>();
-		discListMock.add(Disc.builder().id(1).title("Fear of the dark").year("1992").idBand(1).build());
-		discListMock.add(Disc.builder().id(2).title("Live After Death").year("1985").idBand(1).build());
-		discListMock.add(Disc.builder().id(3).title("Back in Black").year("1980").idBand(2).build());
+		discListMock.add(Disc.builder().id(1).title("Fear of the dark").year("1992").idBand(1).price(20).stock(4).build());
+		discListMock.add(Disc.builder().id(2).title("Live After Death").year("1985").idBand(1).price(25).stock(6).build());
+		discListMock.add(Disc.builder().id(3).title("Back in Black").year("1980").idBand(2).price(30).stock(2).build());
 	}
 	
 	@Test
@@ -74,7 +74,7 @@ class DiscServiceApplicationTests {
 	@Test
 	public void shouldSaveDiscs() {
 		// GIVEN
-		Disc discMock = Disc.builder().idBand(2).title("Highway to Hell").year("1979").build();
+		Disc discMock = Disc.builder().idBand(2).title("Highway to Hell").year("1979").price(20).stock(4).build();
 		when(sequenceGeneratorService.generateSequence(Disc.SEQUENCE_NAME)).thenReturn(4l);
 		when(discRepository.save(discMock)).thenReturn(discMock);
 		// WHEN
@@ -100,6 +100,16 @@ class DiscServiceApplicationTests {
 		assertThat(discList).isNotNull();
 		assertThat(discList).isNotEmpty();
 		assertThat(discList.size()).isEqualTo(2);
+	}
+	
+	@Test
+	public void shouldUpdateDisc() {
+		
+	}
+	
+	@Test
+	public void shouldDeleteDisc() {
+		
 	}
 
 }

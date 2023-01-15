@@ -127,4 +127,13 @@ class BandServiceApplicationTests {
 		assertThat(discList.size()).isEqualTo(2);
 	}
 
+	@Test
+	public void shouldUpdateGenre() {
+		
+	}
+	
+	@Test
+	public void shouldDeleteGenre() {
+		
+	}
 }

@@ -56,4 +56,17 @@ public class BandService {
 		List<Disc> discs = discFeignClient.listDiscsByIdBand(id);
 		return discs;
 	}
+	
+	public Band update(int id, Band band) {
+		Band toUpdate =  getBandById(id);
+		toUpdate.setIdGenre(band.getIdGenre());
+		toUpdate.setCountry(band.getCountry());
+		toUpdate.setName(band.getName());
+		Band updated = bandRepository.save(toUpdate);
+		return updated;
+	}
+	
+	public void delete(int id) {
+		bandRepository.deleteById(id);
+	}
 }

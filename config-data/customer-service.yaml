@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+  
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27004
+      database: customer
+  application:
+    zipkin: http://localhost:9411
+    
+springdoc:
+  swagger-ui:
+    path: /customer/swagger-ui.html
+  api-docs:
+    path: /customer/v3/api-docs
+  packagesToScan: com.customer.service.controller

@@ -76,4 +76,14 @@ class GenreServiceApplicationTests {
 		assertThat(genre.getId()).isEqualTo(2);
 	}
 	
+	@Test
+	public void shouldUpdateBand() {
+		
+	}
+	
+	@Test
+	public void shouldDeleteBand() {
+		
+	}
+	
 }
