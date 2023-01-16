@@ -18,6 +18,20 @@ spring:
       database: payment
   application:
     zipkin: http://localhost:9411
+  kafka:
+    bootstrap-servers: localhost:29092,localhost:39092
+    consumer:
+      group-id: group-default #group-id that will ne used by default   
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "com.payment"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
     
 springdoc:
   swagger-ui:

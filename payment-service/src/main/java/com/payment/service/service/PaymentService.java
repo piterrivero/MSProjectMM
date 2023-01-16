@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.payment.service.KafkaSender;
 import com.payment.service.entity.Payment;
+import com.payment.service.model.Order;
 import com.payment.service.repository.PaymentRepository;
 
 @Service
@@ -16,6 +18,8 @@ public class PaymentService {
 	
 	@Autowired
 	private SequenceGeneratorService sequenceGenerator;
+	@Autowired
+	private KafkaSender kafkaSender;
 	
 	public List<Payment> getAll(){
 		return paymentRepository.findAll();
@@ -25,20 +29,12 @@ public class PaymentService {
 		return paymentRepository.findById(id).orElse(null);
 	}
 	
-	public Payment save(Payment payment) {
+	public void processPayment(Order order) {
+//		TODO verify budget of the client
+		Payment payment = Payment.builder().totalPayment(order.getTotalOrder()).status(false).build();
 		payment.setId(sequenceGenerator.generateSequence(Payment.SEQUENCE_NAME));
-		Payment newPayment = paymentRepository.save(payment);
-		return newPayment;
-	}
-	
-	public Payment update(int id, Payment payment) {
-		Payment toUpdate =  getPaymentById(id);
-		Payment updated = paymentRepository.save(toUpdate);
-		return updated;
-	}
-	
-	public void delete(int id) {
-		paymentRepository.deleteById(id);
+		paymentRepository.save(payment);
+		kafkaSender.sendMessageObject("processPaymentTopic", payment);
 	}
 	
 }

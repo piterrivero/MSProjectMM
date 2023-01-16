@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.order.service.KafkaSender;
 import com.order.service.entity.Order;
 import com.order.service.repository.OrderRepository;
 
@@ -17,6 +18,9 @@ public class OrderService {
 	@Autowired
 	private SequenceGeneratorService sequenceGenerator;
 	
+	@Autowired
+	private KafkaSender kafkaSender;
+	
 	public List<Order> getAll(){
 		return orderRepository.findAll();
 	}
@@ -28,20 +32,12 @@ public class OrderService {
 	public Order save(Order order) {
 		order.setId(sequenceGenerator.generateSequence(Order.SEQUENCE_NAME));
 		Order newOrder = orderRepository.save(order);
+		processOrder(newOrder);
 		return newOrder;
 	}
 	
-	public Order update(int id, Order order) {
-		Order toUpdate =  getOrderById(id);
-		toUpdate.setDetails(order.getDetails());
-		toUpdate.setStatus(order.isStatus());
-		toUpdate.setTotalOrder(order.getTotalOrder());
-		Order updated = orderRepository.save(toUpdate);
-		return updated;
-	}
-	
-	public void delete(int id) {
-		orderRepository.deleteById(id);
+	public void processOrder(Order order) {
+		kafkaSender.sendMessageObject("processOrderTopic", order);
 	}
 	
 }

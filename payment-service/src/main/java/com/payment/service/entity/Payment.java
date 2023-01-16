@@ -20,4 +20,8 @@ public class Payment {
 	@Id
 	private long id;
 	
+	private long totalPayment;
+	
+	private boolean status;
+	
 }
