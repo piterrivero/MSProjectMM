@@ -55,4 +55,6 @@ springdoc:
   packagesToScan: com.band.service.controller
   
 logging:
-  file: app.log
+  file:
+    name: logstash/elk-stack.log
+    path: C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/
