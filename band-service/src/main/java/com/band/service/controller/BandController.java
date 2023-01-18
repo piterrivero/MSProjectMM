@@ -33,7 +33,7 @@ public class BandController {
 	
 	@GetMapping
 	public ResponseEntity<List<Band>> listBands(){
-		log.info("Have been called the listBands method");
+		log.info("Have been called the listBands method on the BandController class");
 		List<Band> bands = bandService.getAll();
 		if (bands.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -43,7 +43,7 @@ public class BandController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Band> getBand(@PathVariable("id") int id){
-		log.info("Have been called the getBand method");
+		log.info("Have been called the getBand method on the BandController class");
 		Band band = bandService.getBandById(id);
 		if (band == null) {
 			return ResponseEntity.notFound().build();
@@ -53,7 +53,7 @@ public class BandController {
 	
 	@PostMapping
 	public ResponseEntity<Band> saveBand(@RequestBody Band band){
-		log.info("Have been called the saveBand method");
+		log.info("Have been called the saveBand method on the BandController class");
 		Band newBand = bandService.save(band);
 		return ResponseEntity.ok(newBand);
 	}
@@ -70,20 +70,22 @@ public class BandController {
 	} 
 
 	public ResponseEntity<Disc> fallBackSaveDisc(@PathVariable("idBand") int idBand, @RequestBody Disc disc, RuntimeException excepcion){
-		log.info("Have been called the fallBackSaveDisc method");
+		log.info("Have been called the fallBackSaveDisc method on the BandController class");
+		log.info("The band can not be saved in this moment, please try later");
 		return new ResponseEntity("The band can not be saved in this moment, please try later", HttpStatus.OK);
 	}
 	
 	@Retry(name = "discCB", fallbackMethod = "fallBackGetDiscsByIdBand")
 	@GetMapping("/disc/{idBand}")
 	public ResponseEntity<List<Disc>> getDiscsByIdBand(@PathVariable("idBand") long idBand){
-		log.info("Have been called the getDiscsByIdBand method");
+		log.info("Have been called the getDiscsByIdBand method on the BandController class");
 		List<Disc> discs = bandService.getDiscByIdBand(idBand);
 		return ResponseEntity.ok(discs);
 	}
 	
 	public ResponseEntity<List<Disc>> fallBackGetDiscsByIdBand(@PathVariable("idBand") long idBand, RuntimeException excepcion){
-		log.info("Have been called the fallBackGetDiscsByIdBand method");
+		log.info("Have been called the fallBackGetDiscsByIdBand method on the BandController class");
+		log.info("Right now the disc can not be found, please try later");
 		return new ResponseEntity("Right now the disc can not be found, please try later", HttpStatus.OK);
 	}
 	
@@ -96,13 +98,14 @@ public class BandController {
 	}
 	
 	public ResponseEntity<Genre> fallBackGetGenreById(@PathVariable("idGenre") long idGenre, RuntimeException excepcion){
-		log.info("Have been called the fallBackGetGenreById method");
+		log.info("Have been called the fallBackGetGenreById method on the BandController class");
+		log.info("Right now the genre can not be found, please try later");
 		return new ResponseEntity("Right now the genre can not be found, please try later", HttpStatus.OK);
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Band> updateBand(@PathVariable("id") int id, @RequestBody Band band){
-		log.info("Have been called the updateBand method");
+		log.info("Have been called the updateBand method on the BandController class");
 		if (band == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -112,7 +115,7 @@ public class BandController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<HttpStatus> deleteBand(@PathVariable("id") int id){
-		log.info("Have been called the deleteBand method");
+		log.info("Have been called the deleteBand method on the BandController class");
 		Band band = bandService.getBandById(id);
 		if (band == null) {
 			return ResponseEntity.notFound().build();

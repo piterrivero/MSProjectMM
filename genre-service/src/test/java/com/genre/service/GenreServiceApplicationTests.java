@@ -47,8 +47,9 @@ class GenreServiceApplicationTests {
 		// WHEN
 		List<Genre> genreList = genreService.getAll();
 		// THEN
-		assertThat(genreList).isNotEmpty();
-		assertThat(genreList.size()).isEqualTo(1);
+		assertThat(genreList).isNotNull()
+							 .isNotEmpty()
+							 .hasSize(1);
 	}
 	
 	@Test
@@ -77,13 +78,19 @@ class GenreServiceApplicationTests {
 	}
 	
 	@Test
-	public void shouldUpdateBand() {
+	public void shouldUpdateGenre() {
+		// GIVEN
+		Genre genreMock = Genre.builder().id(1).genre("Heavy Metal").build();
+		Optional<Genre> genreMockOp = Optional.of(genreMock);
+		Genre updateGenre = Genre.builder().id(1).genre("Heavy Metal Mod").build();
 		
-	}
-	
-	@Test
-	public void shouldDeleteBand() {
+		when(genreRepository.findById(1)).thenReturn(genreMockOp);
+		when(genreRepository.save(genreMock)).thenReturn(updateGenre);
 		
+		// WHEN
+		Genre genreUpdated = genreService.update(1, updateGenre);
+		// THEN
+		assertThat(genreUpdated.getGenre()).isEqualTo("Heavy Metal Mod");
 	}
 	
 }

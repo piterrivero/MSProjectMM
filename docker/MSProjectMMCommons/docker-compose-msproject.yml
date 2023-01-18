@@ -59,6 +59,16 @@ services:
     ports:
       - "27006:27017"
     restart: on-failure:10
+    
+  mongodb-notification:
+    container_name: mongodb-notification
+    image: bitnami/mongodb:4.0.27
+    volumes:
+      - mongodb-notification-data:/bitnami/mongodb/data
+      - ../../mongodb/mongodump:/mongodump
+    ports:
+      - "27007:27017"
+    restart: on-failure:10
 
   zipkin:
     container_name: zipkin
@@ -116,6 +126,50 @@ services:
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      
+  Elasticsearch:
+    image: elasticsearch:7.16.2
+    container_name: elasticsearch
+    restart: always
+    volumes:
+    - elastic_data:/usr/share/elasticsearch/data/
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: single-node    
+    ports:
+    - '9200:9200'
+    - '9300:9300'
+    networks:
+      - elk
+
+  Logstash:
+    image: logstash:7.16.2
+    container_name: logstash
+    restart: always
+    volumes:
+    - ./logstash/:/logstash_dir
+    command: logstash -f /logstash_dir/logstash.conf
+    depends_on:
+      - Elasticsearch
+    ports:
+    - '9600:9600'
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"    
+    networks:
+      - elk
+
+  Kibana:
+    image: kibana:7.16.2
+    container_name: kibana
+    restart: always       
+    ports:
+    - '5601:5601'
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200  
+    depends_on:
+      - Elasticsearch  
+    networks:
+      - elk
 
 volumes:
   mongodb-band-data:
@@ -124,3 +178,8 @@ volumes:
   mongodb-customer-data:
   mongodb-order-data:
   mongodb-payment-data:
+  mongodb-notification-data:
+  elastic_data: {}
+  
+networks:
+  elk:

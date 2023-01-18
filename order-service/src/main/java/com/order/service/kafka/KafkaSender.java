@@ -1,4 +1,4 @@
-package com.order.service;
+package com.order.service.kafka;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

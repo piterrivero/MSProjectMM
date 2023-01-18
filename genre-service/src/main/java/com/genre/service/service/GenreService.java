@@ -1,6 +1,7 @@
 package com.genre.service.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,38 +9,45 @@ import org.springframework.stereotype.Service;
 import com.genre.service.entity.Genre;
 import com.genre.service.repository.GenreRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class GenreService {
 
 	@Autowired
 	private GenreRepository genreRepository;
-	
+
 	@Autowired
 	private SequenceGeneratorService sequenceGenerator;
-	
-	public List<Genre> getAll(){
+
+	public List<Genre> getAll() {
+		log.info("Have been called the getAll method on the GenreService class");
 		return genreRepository.findAll();
 	}
-	
+
 	public Genre getGenreById(int id) {
-		return genreRepository.findById(id).orElse(null);
+		log.info("Have been called the getGenreById method on the GenreService class");
+		Optional<Genre> genre = genreRepository.findById(id);
+		return genre.isPresent() ? genre.get() : null;
 	}
-	
+
 	public Genre save(Genre genre) {
+		log.info("Have been called the save method on the GenreService class");
 		genre.setId(sequenceGenerator.generateSequence(Genre.SEQUENCE_NAME));
-		Genre newGenre = genreRepository.save(genre);
-		return newGenre;
+		return genreRepository.save(genre);
 	}
-	
+
 	public Genre update(int id, Genre genre) {
-		Genre toUpdate =  getGenreById(id);
+		log.info("Have been called the update method on the GenreService class");
+		Genre toUpdate = getGenreById(id);
 		toUpdate.setGenre(genre.getGenre());
-		Genre updated = genreRepository.save(toUpdate);
-		return updated;
+		return genreRepository.save(toUpdate);
 	}
-	
+
 	public void delete(int id) {
+		log.info("Have been called the delete method on the GenreService class");
 		genreRepository.deleteById(id);
 	}
-	
+
 }

@@ -34,3 +34,6 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+            
+logging:
+  file: C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/elk-stack.log

@@ -1,6 +1,5 @@
 package com.customer.service;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -28,19 +27,20 @@ class CustomerServiceApplicationTests {
 	private CustomerRepository customerRepository;
 	@Mock
 	private SequenceGeneratorService sequenceGeneratorService;
-	
-	// There is created an instance of the service and injected the mocks declared before
+
+	// There is created an instance of the service and injected the mocks declared
+	// before
 	@InjectMocks
 	private CustomerService customerService;
 
 	private static List<Customer> customerListMock;
-	
+
 	@BeforeAll
 	static void init() {
 		customerListMock = new ArrayList<>();
 		customerListMock.add(Customer.builder().id(1).name("Pedro").surname("Perez").budget(100).build());
 	}
-	
+
 	@Test
 	public void shouldListAllCustomers() {
 		// GIVEN
@@ -48,10 +48,11 @@ class CustomerServiceApplicationTests {
 		// WHEN
 		List<Customer> customerList = customerService.getAll();
 		// THEN
-		assertThat(customerList).isNotEmpty();
-		assertThat(customerList.size()).isEqualTo(1);
+		assertThat(customerList).isNotNull() 
+								.isNotEmpty()
+								.hasSize(1);
 	}
-	
+
 	@Test
 	public void shouldGetCustomerById() {
 		// GIVEN
@@ -63,7 +64,7 @@ class CustomerServiceApplicationTests {
 		assertThat(customer).isNotNull();
 		assertThat(customer.getName()).isEqualTo("Pedro");
 	}
-	
+
 	@Test
 	public void shouldSaveCustomer() {
 		// GIVEN
@@ -76,15 +77,21 @@ class CustomerServiceApplicationTests {
 		assertThat(customer).isNotNull();
 		assertThat(customer.getId()).isEqualTo(2);
 	}
-	
+
 	@Test
 	public void shouldUpdateCustomer() {
-		
+		// GIVEN
+		Customer customerMock = Customer.builder().name("Maria").surname("Rodriguez").budget(50).build();
+		Optional<Customer> customerMockOp = Optional.of(customerMock);
+		Customer updateCustomer = Customer.builder().name("Maria Mod").surname("Rodriguez").budget(50).build();
+
+		when(customerRepository.findById(1)).thenReturn(customerMockOp);
+		when(customerRepository.save(customerMock)).thenReturn(updateCustomer);
+
+		// WHEN
+		Customer customerUpdated = customerService.update(1, updateCustomer);
+		// THEN
+		assertThat(customerUpdated.getName()).isEqualTo("Maria Mod");
 	}
-	
-	@Test
-	public void shouldDeleteCustomer() {
-		
-	}
-	
+
 }

@@ -61,9 +61,9 @@ class BandServiceApplicationTests {
 		// WHEN
 		List<Band> bandsList = bandService.getAll();
 		// THEN
-		assertThat(bandsList).isNotNull();
-		assertThat(bandsList).isNotEmpty();
-		assertThat(bandsList.size()).isEqualTo(1);
+		assertThat(bandsList).isNotNull()
+							 .isNotEmpty()
+							 .hasSize(1);
 	}
 	
 	@Test
@@ -122,18 +122,23 @@ class BandServiceApplicationTests {
 		// WHEN
 		List<Disc> discList = bandService.getDiscByIdBand(1);
 		// THEN
-		assertThat(discList).isNotNull();
-		assertThat(discList).isNotEmpty();
-		assertThat(discList.size()).isEqualTo(2);
+		assertThat(discList).isNotNull()
+							.isNotEmpty()
+							.hasSize(2);
 	}
 
 	@Test
-	public void shouldUpdateGenre() {
-		
+	public void shouldUpdateBand() {
+		// GIVEN
+		Band bandMock = Band.builder().name("ACDC").id(1).idGenre(1).country("Australia").build();
+		Optional<Band> bandMockOp = Optional.of(bandMock);
+		Band updateBand = Band.builder().name("ACDC Mod").id(1).idGenre(1).country("Australia").build();
+		when(bandRepository.findById(1)).thenReturn(bandMockOp);
+		when(bandRepository.save(bandMock)).thenReturn(updateBand);
+		// WHEN
+		Band bandUpdated = bandService.update(1, updateBand);
+		// THEN
+		assertThat(bandUpdated.getName()).isEqualTo("ACDC Mod");
 	}
 	
-	@Test
-	public void shouldDeleteGenre() {
-		
-	}
 }

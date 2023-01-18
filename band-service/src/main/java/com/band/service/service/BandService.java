@@ -1,6 +1,7 @@
 package com.band.service.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,9 +11,11 @@ import com.band.service.feignclients.DiscFeignClient;
 import com.band.service.feignclients.GenreFeignClient;
 import com.band.service.repository.BandRepository;
 
+import lombok.extern.slf4j.Slf4j;
 import model.Disc;
 import model.Genre;
 
+@Slf4j
 @Service
 public class BandService {
 
@@ -29,44 +32,48 @@ public class BandService {
 	private SequenceGeneratorService sequenceGenerator;
 	
 	public List<Band> getAll(){
+		log.info("Have been called the getAll method on the BandService class");
 		return bandRepository.findAll();
 	}
 	
 	public Band getBandById(int id) {
-		return bandRepository.findById(id).orElse(null);
+		log.info("Have been called the getBandById method on the BandService class");
+		Optional<Band> band = bandRepository.findById(id);
+		return band.isPresent() ? band.get() : null;
 	}
 	
 	public Band save(Band band) {
+		log.info("Have been called the save method on the BandService class");
 		band.setId(sequenceGenerator.generateSequence(Band.SEQUENCE_NAME));
-		Band newBand = bandRepository.save(band);
-		return newBand;
+		return bandRepository.save(band);
 	}
 	
 	public Disc saveDisc(Disc disc) {
-		Disc newDisc = discFeignClient.saveDisc(disc);
-		return newDisc;
+		log.info("Have been called the saveDisc method on the BandService class");
+		return discFeignClient.saveDisc(disc);
 	}
 	
 	public Genre getGenreById(long id) {
-		Genre genre = genreFeignClient.getGenreById(id);
-		return genre;
+		log.info("Have been called the getGenreById method on the BandService class");
+		return genreFeignClient.getGenreById(id);
 	}	
 	
 	public List<Disc> getDiscByIdBand(long id){
-		List<Disc> discs = discFeignClient.listDiscsByIdBand(id);
-		return discs;
+		log.info("Have been called the getDiscByIdBand method on the BandService class");
+		return discFeignClient.listDiscsByIdBand(id);
 	}
 	
 	public Band update(int id, Band band) {
+		log.info("Have been called the update method on the BandService class");
 		Band toUpdate =  getBandById(id);
 		toUpdate.setIdGenre(band.getIdGenre());
 		toUpdate.setCountry(band.getCountry());
 		toUpdate.setName(band.getName());
-		Band updated = bandRepository.save(toUpdate);
-		return updated;
+		return bandRepository.save(toUpdate);
 	}
 	
 	public void delete(int id) {
+		log.info("Have been called the delete method on the BandService class");
 		bandRepository.deleteById(id);
 	}
 }

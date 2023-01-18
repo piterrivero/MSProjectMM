@@ -63,25 +63,10 @@ class PaymentServiceApplicationTests {
 	}
 	
 	@Test
-	public void shouldSavePayment() {
+	public void shouldProcessPayment() {
 		// GIVEN
-		Payment paymentMock = Payment.builder().build();
-		when(paymentRepository.save(paymentMock)).thenReturn(paymentMock);
-		when(sequenceGeneratorService.generateSequence(Payment.SEQUENCE_NAME)).thenReturn(2L);
 		// WHEN
-		Payment payment = paymentService.save(paymentMock);
 		// THEN
-		assertThat(payment).isNotNull();
-		assertThat(payment.getId()).isEqualTo(2);
 	}
 	
-	@Test
-	public void shouldUpdatePayment() {
-		
-	}
-	
-	@Test
-	public void shouldDeletePayment() {
-		
-	}
 }

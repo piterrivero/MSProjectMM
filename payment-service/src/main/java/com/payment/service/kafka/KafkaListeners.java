@@ -1,4 +1,4 @@
-package com.payment.service;
+package com.payment.service.kafka;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -19,7 +19,8 @@ public class KafkaListeners {
 	// Listening a complex type
 	@KafkaListener(topics = "processOrderTopic", groupId = "group1", containerFactory = "objectKafkaListenerContainerFactory")
 	public void listenerPayment(Order order) {
-		log.info("topicAlbum: Received Message of topic: topicObject on listenerPayment. Payment status: "+order.isStatus());
+		log.info("Have been called the listenerPayment method on the KafkaListeners class");
+		log.info("Received Message of topic: processOrderTopic on listenerPayment. Payment status: "+order.isStatus());
 		paymentService.processPayment(order);
 	}
 	

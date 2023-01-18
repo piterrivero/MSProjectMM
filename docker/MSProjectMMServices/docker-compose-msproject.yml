@@ -5,6 +5,8 @@ services:
     container_name: config-service
     ports:
       - "8888:8888"
+    networks:
+      - services
 
   eureka-service:
     image: piterrivero/eureka-service:latest
@@ -15,6 +17,8 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       - config-service
+    networks:
+      - services
       
   gateway-service:
     image: piterrivero/gateway-service:latest
@@ -28,7 +32,9 @@ services:
       - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY= TRACE
     depends_on:
       - config-service
-      - eureka-service    
+      - eureka-service
+    networks:
+      - services    
       
   band-service:
     image: piterrivero/band-service:latest
@@ -39,6 +45,8 @@ services:
       - config-service 
       - eureka-service
       - gateway-service
+    networks:
+      - services
       
   disc-service:
     image: piterrivero/disc-service:latest
@@ -49,6 +57,8 @@ services:
       - config-service
       - eureka-service
       - gateway-service
+    networks:
+      - services
       
   genre-service:
     image: piterrivero/genre-service:latest
@@ -59,3 +69,8 @@ services:
       - config-service
       - eureka-service
       - gateway-service
+    networks:
+      - services
+      
+networks:
+  services:

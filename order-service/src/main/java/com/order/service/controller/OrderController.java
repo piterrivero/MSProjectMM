@@ -26,7 +26,7 @@ public class OrderController {
 	
 	@GetMapping
 	public ResponseEntity<List<Order>> listOrder(){
-		log.info("Have been called the listOrder method");
+		log.info("Have been called the listOrder method on the OrderController class");
 		List<Order> order = orderService.getAll();
 		if (order.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -36,7 +36,7 @@ public class OrderController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Order> getOrder(@PathVariable("id") int id){
-		log.info("Have been called the getOrder method");
+		log.info("Have been called the getOrder method on the OrderController class");
 		Order order = orderService.getOrderById(id);
 		if (order == null) {
 			return ResponseEntity.notFound().build();
@@ -46,7 +46,7 @@ public class OrderController {
 	
 	@PostMapping
 	public ResponseEntity<Order> saveOrder(@RequestBody Order order){
-		log.info("Have been called the saveOrder method");
+		log.info("Have been called the saveOrder method on the OrderController class");
 		Order newOrder = orderService.save(order);
 		return ResponseEntity.ok(newOrder);
 	}

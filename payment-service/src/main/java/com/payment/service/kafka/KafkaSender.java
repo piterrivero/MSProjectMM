@@ -1,4 +1,4 @@
-package com.payment.service;
+package com.payment.service.kafka;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -25,3 +25,6 @@ springdoc:
   api-docs:
     path: /customer/v3/api-docs
   packagesToScan: com.customer.service.controller
+  
+logging:
+  file: C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/elk-stack.log

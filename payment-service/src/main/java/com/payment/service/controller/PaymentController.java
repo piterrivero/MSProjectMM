@@ -24,7 +24,7 @@ public class PaymentController {
 	
 	@GetMapping
 	public ResponseEntity<List<Payment>> listPayment(){
-		log.info("Have been called the listPayment method");
+		log.info("Have been called the listPayment method on the PaymentController class");
 		List<Payment> payment = paymentService.getAll();
 		if (payment.isEmpty()) {
 			return ResponseEntity.noContent().build();
@@ -34,7 +34,7 @@ public class PaymentController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Payment> getPayment(@PathVariable("id") int id){
-		log.info("Have been called the getPayment method");
+		log.info("Have been called the getPayment method on the PaymentController class");
 		Payment payment = paymentService.getPaymentById(id);
 		if (payment == null) {
 			return ResponseEntity.notFound().build();
