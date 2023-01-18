@@ -27,4 +27,5 @@ springdoc:
   packagesToScan: com.disc.service.controller
   
 logging:
-  file: C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/elk-stack.log
+  file:
+    name: C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/elk-stack.log
