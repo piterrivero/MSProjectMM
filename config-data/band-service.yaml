@@ -56,5 +56,4 @@ springdoc:
   
 logging:
   file:
-    name: logstash/elk-stack.log
-    path: C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/
+    name: C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/elk-stack.log
