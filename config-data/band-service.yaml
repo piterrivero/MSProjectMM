@@ -55,6 +55,4 @@ springdoc:
   packagesToScan: com.band.service.controller
   
 logging:
-  file:
-    name: logs/myapp.log
-    path: logs
+  file: app.log
