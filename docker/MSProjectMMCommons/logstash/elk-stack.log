@@ -1,0 +1,528 @@
+2023-01-18 18:59:16.195  INFO [band-service,,] 27300 --- [restartedMain] com.band.service.BandServiceApplication  : No active profile set, falling back to default profiles: default
+2023-01-18 18:59:19.507  INFO [band-service,,] 27300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2023-01-18 18:59:20.074  INFO [band-service,,] 27300 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 559 ms. Found 1 MongoDB repository interfaces.
+2023-01-18 18:59:21.139  INFO [band-service,,] 27300 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ccb94f30-c56d-30e3-aed7-751ae1bf85e8
+2023-01-18 18:59:23.897  INFO [band-service,,] 27300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-01-18 18:59:23.927  INFO [band-service,,] 27300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-18 18:59:23.927  INFO [band-service,,] 27300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2023-01-18 18:59:24.287  INFO [band-service,,] 27300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-18 18:59:24.290  INFO [band-service,,] 27300 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8025 ms
+2023-01-18 18:59:29.916  INFO [band-service,,] 27300 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27001], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-01-18 18:59:30.092  INFO [band-service,,] 27300 --- [cluster-rtt-ClusterId{value='63c83381a67fe16f86737d05', description='null'}-localhost:27001] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:16}] to localhost:27001
+2023-01-18 18:59:30.098  INFO [band-service,,] 27300 --- [cluster-ClusterId{value='63c83381a67fe16f86737d05', description='null'}-localhost:27001] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:15}] to localhost:27001
+2023-01-18 18:59:30.099  INFO [band-service,,] 27300 --- [cluster-ClusterId{value='63c83381a67fe16f86737d05', description='null'}-localhost:27001] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27001, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=69968200}
+2023-01-18 18:59:30.243  WARN [band-service,,] 27300 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 18:59:30.564  WARN [band-service,,] 27300 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 18:59:35.124  WARN [band-service,,] 27300 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-18 18:59:36.615  WARN [band-service,,] 27300 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : The provided URL is empty. Will try picking an instance via load-balancing.
+2023-01-18 18:59:36.838  WARN [band-service,,] 27300 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : The provided URL is empty. Will try picking an instance via load-balancing.
+2023-01-18 18:59:44.064  INFO [band-service,,] 27300 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-18 18:59:44.385  WARN [band-service,,] 27300 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-18 18:59:44.681  INFO [band-service,,] 27300 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-18 18:59:45.011  INFO [band-service,,] 27300 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 51415 (http) with context path ''
+2023-01-18 18:59:45.012  INFO [band-service,,] 27300 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 51415
+2023-01-18 18:59:45.025  INFO [band-service,,] 27300 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-18 18:59:45.122  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-18 18:59:45.134  INFO [band-service,,] 27300 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 18:59:45.186  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 18:59:45.186  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 18:59:45.187  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 18:59:45.187  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 18:59:45.187  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 18:59:45.187  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-18 18:59:45.187  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 18:59:45.675  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 18:59:45.678  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-18 18:59:45.684  INFO [band-service,,] 27300 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-18 18:59:45.694  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1674064785692 with initial instances count: 0
+2023-01-18 18:59:45.728  INFO [band-service,,] 27300 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BAND-SERVICE with eureka with status UP
+2023-01-18 18:59:45.729  INFO [band-service,,] 27300 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674064785729, current=UP, previous=STARTING]
+2023-01-18 18:59:45.733  INFO [band-service,,] 27300 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0: registering service...
+2023-01-18 18:59:45.822  INFO [band-service,,] 27300 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0 - registration status: 204
+2023-01-18 18:59:46.838  INFO [band-service,,] 27300 --- [restartedMain] com.band.service.BandServiceApplication  : Started BandServiceApplication in 60.702 seconds (JVM running for 64.091)
+2023-01-18 18:59:47.780  INFO [band-service,,] 27300 --- [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-18 18:59:47.781  INFO [band-service,,] 27300 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-18 18:59:47.786  INFO [band-service,,] 27300 --- [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-01-18 19:00:15.695  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:00:15.696  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:00:15.696  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:00:15.696  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:00:15.697  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:00:15.697  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-01-18 19:00:15.697  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:00:15.722  INFO [band-service,,] 27300 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:00:41.524  INFO [band-service,17f8b74aa3d7f6bd,6462a1604bf24b89] 27300 --- [http-nio-auto-1-exec-1] c.b.service.controller.BandController    : Have been called the getBand method on the BandController class
+2023-01-18 19:00:41.525  INFO [band-service,17f8b74aa3d7f6bd,6462a1604bf24b89] 27300 --- [http-nio-auto-1-exec-1] com.band.service.service.BandService     : Have been called the getBandById method on the BandService class
+2023-01-18 19:00:41.725  INFO [band-service,17f8b74aa3d7f6bd,6462a1604bf24b89] 27300 --- [http-nio-auto-1-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:17}] to localhost:27001
+2023-01-18 19:00:46.034  INFO [band-service,df72a2a6de37d05d,8f3926bae54fd364] 27300 --- [http-nio-auto-1-exec-2] c.b.service.controller.BandController    : Have been called the listBands method on the BandController class
+2023-01-18 19:00:46.034  INFO [band-service,df72a2a6de37d05d,8f3926bae54fd364] 27300 --- [http-nio-auto-1-exec-2] com.band.service.service.BandService     : Have been called the getAll method on the BandService class
+2023-01-18 19:01:14.723  INFO [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:01:14.726  INFO [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BAND-SERVICE with eureka with status DOWN
+2023-01-18 19:01:14.727  INFO [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674064874727, current=DOWN, previous=UP]
+2023-01-18 19:01:14.728  INFO [band-service,,] 27300 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0: registering service...
+2023-01-18 19:01:14.746  INFO [band-service,,] 27300 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0 - registration status: 204
+2023-01-18 19:01:15.268  INFO [band-service,,] 27300 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:01:15.546  INFO [band-service,,] 27300 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:01:15.725  INFO [band-service,,] 27300 --- [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:01:15.906  INFO [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-18 19:01:15.911  INFO [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-18 19:01:15.927  WARN [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='63c83381a67fe16f86737d05', description='null'}-localhost:27001] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(DefaultServerMonitor.java:294)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:275)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:170)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:01:15.928  WARN [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='63c83381a67fe16f86737d05', description='null'}-localhost:27001] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.waitForNext(DefaultServerMonitor.java:435)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.access$1300(DefaultServerMonitor.java:57)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeRunnable.run(DefaultServerMonitor.java:409)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:01:15.929  WARN [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2081)
+ java.base@11.0.13/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:433)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:01:15.930  WARN [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ app//zipkin2.reporter.ByteBoundedQueue.drainTo(ByteBoundedQueue.java:81)
+ app//zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:270)
+ app//zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:01:15.978  INFO [band-service,,] 27300 --- [RMI TCP Connection(6)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:17}] to localhost:27001 because the pool has been closed.
+2023-01-18 19:06:31.027  INFO [eureka-service,,] 24100 --- [restartedMain] c.e.service.EurekaServiceApplication     : No active profile set, falling back to default profiles: default
+2023-01-18 19:06:31.650  INFO [genre-service,,] 21032 --- [restartedMain] c.genre.service.GenreServiceApplication  : No active profile set, falling back to default profiles: default
+2023-01-18 19:06:32.430  INFO [disc-service,,] 19876 --- [restartedMain] com.disc.service.DiscServiceApplication  : No active profile set, falling back to default profiles: default
+2023-01-18 19:06:33.306  INFO [band-service,,] 13996 --- [restartedMain] com.band.service.BandServiceApplication  : No active profile set, falling back to default profiles: default
+2023-01-18 19:06:34.020  INFO [genre-service,,] 21032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2023-01-18 19:06:34.405  INFO [gateway-service,,] 24236 --- [restartedMain] c.g.service.GatewayServiceApplication    : No active profile set, falling back to default profiles: default
+2023-01-18 19:06:34.513  INFO [eureka-service,,] 24100 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=aa95af0c-0d44-3809-a706-d7ef9e5156a7
+2023-01-18 19:06:34.755  INFO [genre-service,,] 21032 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 725 ms. Found 1 MongoDB repository interfaces.
+2023-01-18 19:06:35.080  INFO [disc-service,,] 19876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2023-01-18 19:06:35.717  INFO [disc-service,,] 19876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 628 ms. Found 1 MongoDB repository interfaces.
+2023-01-18 19:06:35.886  INFO [genre-service,,] 21032 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1ee69ebe-c39c-31b7-94f4-b2405f362778
+2023-01-18 19:06:36.752  INFO [disc-service,,] 19876 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7ff7b987-3287-38e2-b613-da1e03731fcc
+2023-01-18 19:06:37.518  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ed8ccf63-e8ec-3fda-9664-c5916ffc210b
+2023-01-18 19:06:37.627  INFO [eureka-service,,] 24100 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2023-01-18 19:06:37.671  INFO [eureka-service,,] 24100 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-18 19:06:37.673  INFO [eureka-service,,] 24100 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2023-01-18 19:06:37.843  INFO [band-service,,] 13996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2023-01-18 19:06:38.146  INFO [eureka-service,,] 24100 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-18 19:06:38.147  INFO [eureka-service,,] 24100 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7092 ms
+2023-01-18 19:06:38.500  INFO [band-service,,] 13996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 639 ms. Found 1 MongoDB repository interfaces.
+2023-01-18 19:06:38.513  INFO [gateway-service,,] 24236 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-18 19:06:38.522  INFO [gateway-service,,] 24236 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-18 19:06:38.528  INFO [gateway-service,,] 24236 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-01-18 19:06:38.813  INFO [genre-service,,] 21032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-01-18 19:06:38.855  INFO [genre-service,,] 21032 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-18 19:06:38.856  INFO [genre-service,,] 21032 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2023-01-18 19:06:39.316  INFO [genre-service,,] 21032 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-18 19:06:39.318  INFO [genre-service,,] 21032 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7629 ms
+2023-01-18 19:06:39.847  INFO [band-service,,] 13996 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ccb94f30-c56d-30e3-aed7-751ae1bf85e8
+2023-01-18 19:06:39.849  INFO [disc-service,,] 19876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-01-18 19:06:39.877  INFO [disc-service,,] 19876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-18 19:06:39.878  INFO [disc-service,,] 19876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2023-01-18 19:06:40.384  INFO [disc-service,,] 19876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-18 19:06:40.387  INFO [disc-service,,] 19876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7912 ms
+2023-01-18 19:06:42.548  INFO [genre-service,,] 21032 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27003], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-01-18 19:06:42.779  INFO [genre-service,,] 21032 --- [cluster-ClusterId{value='63c8353242b18978614be577', description='null'}-localhost:27003] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:12}] to localhost:27003
+2023-01-18 19:06:42.781  INFO [genre-service,,] 21032 --- [cluster-rtt-ClusterId{value='63c8353242b18978614be577', description='null'}-localhost:27003] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:13}] to localhost:27003
+2023-01-18 19:06:42.783  INFO [genre-service,,] 21032 --- [cluster-ClusterId{value='63c8353242b18978614be577', description='null'}-localhost:27003] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27003, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60650500}
+2023-01-18 19:06:42.923  WARN [genre-service,,] 21032 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 19:06:43.345  WARN [genre-service,,] 21032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-18 19:06:43.391  INFO [band-service,,] 13996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-01-18 19:06:43.434  INFO [band-service,,] 13996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-18 19:06:43.436  INFO [band-service,,] 13996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2023-01-18 19:06:43.469  WARN [genre-service,,] 21032 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 19:06:43.660  INFO [disc-service,,] 19876 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27002], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-01-18 19:06:43.886  INFO [disc-service,,] 19876 --- [cluster-rtt-ClusterId{value='63c8353312814252592fd89a', description='null'}-localhost:27002] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:13}] to localhost:27002
+2023-01-18 19:06:43.886  INFO [disc-service,,] 19876 --- [cluster-ClusterId{value='63c8353312814252592fd89a', description='null'}-localhost:27002] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:14}] to localhost:27002
+2023-01-18 19:06:43.890  INFO [disc-service,,] 19876 --- [cluster-ClusterId{value='63c8353312814252592fd89a', description='null'}-localhost:27002] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27002, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=85421800}
+2023-01-18 19:06:43.936  INFO [band-service,,] 13996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-18 19:06:43.941  INFO [band-service,,] 13996 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10556 ms
+2023-01-18 19:06:44.051  WARN [disc-service,,] 19876 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 19:06:44.514  WARN [disc-service,,] 19876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-18 19:06:44.661  WARN [disc-service,,] 19876 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 19:06:46.269  INFO [eureka-service,,] 24100 --- [restartedMain] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.4 05/24/2017 03:20 PM'
+2023-01-18 19:06:46.442  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2023-01-18 19:06:46.443  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2023-01-18 19:06:46.444  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2023-01-18 19:06:46.446  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2023-01-18 19:06:46.453  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2023-01-18 19:06:46.455  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2023-01-18 19:06:46.455  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2023-01-18 19:06:46.456  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2023-01-18 19:06:46.456  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2023-01-18 19:06:46.456  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2023-01-18 19:06:46.457  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2023-01-18 19:06:46.457  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2023-01-18 19:06:46.458  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-01-18 19:06:46.485  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-01-18 19:06:46.489  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-01-18 19:06:47.269  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-01-18 19:06:47.270  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-01-18 19:06:50.764  INFO [band-service,,] 13996 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27001], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2023-01-18 19:06:51.001  INFO [band-service,,] 13996 --- [cluster-rtt-ClusterId{value='63c8353a62ef4b221658368e', description='null'}-localhost:27001] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:18}] to localhost:27001
+2023-01-18 19:06:51.032  INFO [band-service,,] 13996 --- [cluster-ClusterId{value='63c8353a62ef4b221658368e', description='null'}-localhost:27001] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:19}] to localhost:27001
+2023-01-18 19:06:51.033  INFO [band-service,,] 13996 --- [cluster-ClusterId{value='63c8353a62ef4b221658368e', description='null'}-localhost:27001] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27001, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62286300}
+2023-01-18 19:06:51.081  WARN [gateway-service,,] 24236 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-18 19:06:51.124  INFO [gateway-service,,] 24236 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-18 19:06:51.171  WARN [band-service,,] 13996 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 19:06:51.449  WARN [band-service,,] 13996 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2023-01-18 19:06:52.871  WARN [eureka-service,,] 24100 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-18 19:06:54.349  INFO [genre-service,,] 21032 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-18 19:06:55.047  INFO [eureka-service,,] 24100 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2023-01-18 19:06:55.149  INFO [disc-service,,] 19876 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-18 19:06:55.595  WARN [gateway-service,,] 24236 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-18 19:06:55.936  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-18 19:06:56.080  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-18 19:06:56.095  INFO [gateway-service,,] 24236 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:06:56.161  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:06:56.162  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:06:56.163  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:06:56.163  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:06:56.164  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:06:56.164  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-18 19:06:56.164  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:06:57.347  WARN [genre-service,,] 21032 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-18 19:06:57.353  WARN [band-service,,] 13996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-01-18 19:06:57.992  WARN [disc-service,,] 19876 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-18 19:06:58.004  WARN [eureka-service,,] 24100 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-18 19:06:58.034  INFO [genre-service,,] 21032 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52088 (http) with context path ''
+2023-01-18 19:06:58.036  INFO [genre-service,,] 21032 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 52088
+2023-01-18 19:06:58.051  INFO [genre-service,,] 21032 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-18 19:06:58.082  INFO [eureka-service,,] 24100 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-18 19:06:58.209  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-18 19:06:58.226  INFO [genre-service,,] 21032 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:06:58.254  INFO [eureka-service,,] 24100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-18 19:06:58.255  INFO [eureka-service,,] 24100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2023-01-18 19:06:58.282  INFO [eureka-service,,] 24100 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1674065218279 with initial instances count: 0
+2023-01-18 19:06:58.314  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:06:58.314  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:06:58.315  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:06:58.315  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:06:58.315  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:06:58.316  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-18 19:06:58.316  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:06:58.494  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2023-01-18 19:06:58.500  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2023-01-18 19:06:58.688  INFO [disc-service,,] 19876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52091 (http) with context path ''
+2023-01-18 19:06:58.690  INFO [disc-service,,] 19876 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 52091
+2023-01-18 19:06:58.705  INFO [disc-service,,] 19876 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-18 19:06:58.822  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-18 19:06:58.838  INFO [disc-service,,] 19876 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:06:58.913  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:06:58.914  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:06:58.915  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:06:58.915  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:06:58.915  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:06:58.917  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-18 19:06:58.918  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:06:58.929  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2023-01-18 19:06:58.929  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2023-01-18 19:06:58.930  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2023-01-18 19:06:58.930  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2023-01-18 19:06:59.248  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2023-01-18 19:06:59.268  WARN [band-service,,] 13996 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : The provided URL is empty. Will try picking an instance via load-balancing.
+2023-01-18 19:06:59.269  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2023-01-18 19:06:59.271  INFO [eureka-service,,] 24100 --- [restartedMain] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2023-01-18 19:06:59.532  WARN [band-service,,] 13996 --- [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : The provided URL is empty. Will try picking an instance via load-balancing.
+2023-01-18 19:06:59.539  INFO [eureka-service,,] 24100 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-18 19:06:59.813  INFO [eureka-service,,] 24100 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
+2023-01-18 19:06:59.828  INFO [eureka-service,,] 24100 --- [Thread-14] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2023-01-18 19:06:59.858  INFO [eureka-service,,] 24100 --- [Thread-14] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2023-01-18 19:06:59.860  INFO [eureka-service,,] 24100 --- [Thread-14] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2023-01-18 19:06:59.860  INFO [eureka-service,,] 24100 --- [Thread-14] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2023-01-18 19:06:59.860  INFO [eureka-service,,] 24100 --- [Thread-14] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2023-01-18 19:06:59.861  INFO [eureka-service,,] 24100 --- [Thread-14] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2023-01-18 19:06:59.889  INFO [eureka-service,,] 24100 --- [Thread-14] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2023-01-18 19:06:59.912  INFO [eureka-service,,] 24100 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2023-01-18 19:06:59.914  INFO [eureka-service,,] 24100 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2023-01-18 19:07:00.299  INFO [eureka-service,,] 24100 --- [http-nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-18 19:07:00.300  INFO [eureka-service,,] 24100 --- [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-18 19:07:00.306  INFO [eureka-service,,] 24100 --- [http-nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-01-18 19:07:00.496  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:00.496  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:00.502  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-18 19:07:00.502  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-18 19:07:00.509  INFO [disc-service,,] 19876 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-18 19:07:00.509  INFO [genre-service,,] 21032 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-18 19:07:00.523  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1674065220520 with initial instances count: 0
+2023-01-18 19:07:00.523  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1674065220521 with initial instances count: 0
+2023-01-18 19:07:00.538  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:00.543  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-18 19:07:00.550  INFO [gateway-service,,] 24236 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-18 19:07:00.550  INFO [disc-service,,] 19876 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DISC-SERVICE with eureka with status UP
+2023-01-18 19:07:00.553  INFO [disc-service,,] 19876 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674065220553, current=UP, previous=STARTING]
+2023-01-18 19:07:00.559  INFO [genre-service,,] 21032 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GENRE-SERVICE with eureka with status UP
+2023-01-18 19:07:00.561  INFO [genre-service,,] 21032 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674065220561, current=UP, previous=STARTING]
+2023-01-18 19:07:00.563  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1674065220560 with initial instances count: 0
+2023-01-18 19:07:00.566  INFO [genre-service,,] 21032 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GENRE-SERVICE/local.inventia.biz:genre-service:0: registering service...
+2023-01-18 19:07:00.569  INFO [disc-service,,] 19876 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DISC-SERVICE/local.inventia.biz:disc-service:0: registering service...
+2023-01-18 19:07:00.614  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GATEWAY-SERVICE with eureka with status UP
+2023-01-18 19:07:00.615  INFO [gateway-service,,] 24236 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674065220615, current=UP, previous=STARTING]
+2023-01-18 19:07:00.620  INFO [gateway-service,,] 24236 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080: registering service...
+2023-01-18 19:07:00.898  INFO [eureka-service,447413a641aa3be5,447413a641aa3be5] 24100 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance DISC-SERVICE/local.inventia.biz:disc-service:0 with status UP (replication=false)
+2023-01-18 19:07:00.902  INFO [eureka-service,a7843462cbb9ac31,a7843462cbb9ac31] 24100 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GENRE-SERVICE/local.inventia.biz:genre-service:0 with status UP (replication=false)
+2023-01-18 19:07:00.903  INFO [eureka-service,7890a38223e32b11,7890a38223e32b11] 24100 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080 with status UP (replication=false)
+2023-01-18 19:07:00.905  INFO [genre-service,,] 21032 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GENRE-SERVICE/local.inventia.biz:genre-service:0 - registration status: 204
+2023-01-18 19:07:00.906  INFO [gateway-service,,] 24236 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080 - registration status: 204
+2023-01-18 19:07:00.905  INFO [disc-service,,] 19876 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DISC-SERVICE/local.inventia.biz:disc-service:0 - registration status: 204
+2023-01-18 19:07:01.739  INFO [eureka-service,4022cdcfc0e090c2,4022cdcfc0e090c2] 24100 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance DISC-SERVICE/local.inventia.biz:disc-service:0 with status UP (replication=true)
+2023-01-18 19:07:01.741  INFO [eureka-service,4022cdcfc0e090c2,4022cdcfc0e090c2] 24100 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GENRE-SERVICE/local.inventia.biz:genre-service:0 with status UP (replication=true)
+2023-01-18 19:07:01.743  INFO [eureka-service,4022cdcfc0e090c2,4022cdcfc0e090c2] 24100 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080 with status UP (replication=true)
+2023-01-18 19:07:02.671  INFO [eureka-service,,] 24100 --- [restartedMain] c.e.service.EurekaServiceApplication     : Started EurekaServiceApplication in 103.829 seconds (JVM running for 107.19)
+2023-01-18 19:07:03.558  INFO [disc-service,,] 19876 --- [restartedMain] com.disc.service.DiscServiceApplication  : Started DiscServiceApplication in 76.527 seconds (JVM running for 80.314)
+2023-01-18 19:07:03.576  INFO [genre-service,,] 21032 --- [restartedMain] c.genre.service.GenreServiceApplication  : Started GenreServiceApplication in 74.037 seconds (JVM running for 77.726)
+2023-01-18 19:07:04.805  INFO [gateway-service,,] 24236 --- [restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2023-01-18 19:07:04.807  INFO [gateway-service,,] 24236 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+2023-01-18 19:07:08.047  INFO [gateway-service,,] 24236 --- [restartedMain] c.g.service.GatewayServiceApplication    : Started GatewayServiceApplication in 97.321 seconds (JVM running for 100.36)
+2023-01-18 19:07:09.173  INFO [band-service,,] 13996 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2023-01-18 19:07:09.658  WARN [band-service,,] 13996 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2023-01-18 19:07:10.005  INFO [band-service,,] 13996 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-01-18 19:07:10.379  INFO [band-service,,] 13996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52126 (http) with context path ''
+2023-01-18 19:07:10.382  INFO [band-service,,] 13996 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 52126
+2023-01-18 19:07:10.395  INFO [band-service,,] 13996 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2023-01-18 19:07:10.504  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2023-01-18 19:07:10.519  INFO [band-service,,] 13996 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:07:10.584  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:07:10.584  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:07:10.585  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:07:10.586  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:07:10.586  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:07:10.586  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2023-01-18 19:07:10.586  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:07:11.180  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:11.185  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2023-01-18 19:07:11.192  INFO [band-service,,] 13996 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2023-01-18 19:07:11.204  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1674065231202 with initial instances count: 0
+2023-01-18 19:07:11.248  INFO [band-service,,] 13996 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application BAND-SERVICE with eureka with status UP
+2023-01-18 19:07:11.250  INFO [band-service,,] 13996 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674065231250, current=UP, previous=STARTING]
+2023-01-18 19:07:11.254  INFO [band-service,,] 13996 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0: registering service...
+2023-01-18 19:07:11.379  INFO [eureka-service,8f60a07cc75ec677,8f60a07cc75ec677] 24100 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BAND-SERVICE/local.inventia.biz:band-service:0 with status UP (replication=false)
+2023-01-18 19:07:11.383  INFO [band-service,,] 13996 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0 - registration status: 204
+2023-01-18 19:07:11.906  INFO [eureka-service,3fe837d3a8932930,3fe837d3a8932930] 24100 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BAND-SERVICE/local.inventia.biz:band-service:0 with status UP (replication=true)
+2023-01-18 19:07:12.732  INFO [band-service,,] 13996 --- [restartedMain] com.band.service.BandServiceApplication  : Started BandServiceApplication in 88.233 seconds (JVM running for 92.397)
+2023-01-18 19:07:13.872  INFO [band-service,,] 13996 --- [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-18 19:07:13.872  INFO [band-service,,] 13996 --- [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-18 19:07:13.878  INFO [band-service,,] 13996 --- [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-01-18 19:07:30.515  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:07:30.515  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:07:30.516  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:07:30.516  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:07:30.516  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:07:30.516  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:07:30.516  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:07:30.516  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:07:30.517  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:07:30.517  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:07:30.517  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-01-18 19:07:30.517  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-01-18 19:07:30.517  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:07:30.517  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:07:30.548  INFO [genre-service,,] 21032 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:30.551  INFO [disc-service,,] 19876 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:30.550  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:07:30.551  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:07:30.552  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:07:30.552  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:07:30.553  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:07:30.553  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-01-18 19:07:30.554  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:07:30.580  INFO [gateway-service,,] 24236 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:41.200  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2023-01-18 19:07:41.201  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2023-01-18 19:07:41.201  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2023-01-18 19:07:41.202  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2023-01-18 19:07:41.202  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2023-01-18 19:07:41.202  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2023-01-18 19:07:41.202  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2023-01-18 19:07:41.232  INFO [band-service,,] 13996 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2023-01-18 19:07:59.881  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2023-01-18 19:08:59.889  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 7ms
+2023-01-18 19:09:59.900  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2023-01-18 19:10:59.909  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 9ms
+2023-01-18 19:11:56.171  INFO [gateway-service,,] 24236 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:11:58.329  INFO [genre-service,,] 21032 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:11:58.926  INFO [disc-service,,] 19876 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:11:59.915  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
+2023-01-18 19:12:10.597  INFO [band-service,,] 13996 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:12:59.921  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 6ms
+2023-01-18 19:13:59.925  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2023-01-18 19:14:59.936  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 11ms
+2023-01-18 19:15:59.945  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
+2023-01-18 19:16:56.184  INFO [gateway-service,,] 24236 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:16:58.336  INFO [genre-service,,] 21032 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:16:58.928  INFO [disc-service,,] 19876 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:16:59.953  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
+2023-01-18 19:17:10.614  INFO [band-service,,] 13996 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2023-01-18 19:17:59.968  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 14ms
+2023-01-18 19:18:31.757  INFO [band-service,213983ae2f9dc939,7e08f6107ac40628] 13996 --- [http-nio-auto-1-exec-1] c.b.service.controller.BandController    : Have been called the listBands method on the BandController class
+2023-01-18 19:18:31.758  INFO [band-service,213983ae2f9dc939,7e08f6107ac40628] 13996 --- [http-nio-auto-1-exec-1] com.band.service.service.BandService     : Have been called the getAll method on the BandService class
+2023-01-18 19:18:31.902  INFO [band-service,213983ae2f9dc939,7e08f6107ac40628] 13996 --- [http-nio-auto-1-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:20}] to localhost:27001
+2023-01-18 19:18:36.383  INFO [band-service,d5eb381f956f135d,811f9cbb5c3b9501] 13996 --- [http-nio-auto-1-exec-2] c.b.service.controller.BandController    : Have been called the getBand method on the BandController class
+2023-01-18 19:18:36.384  INFO [band-service,d5eb381f956f135d,811f9cbb5c3b9501] 13996 --- [http-nio-auto-1-exec-2] com.band.service.service.BandService     : Have been called the getBandById method on the BandService class
+2023-01-18 19:18:40.091  INFO [band-service,15f11569da4435d4,04798651cda3e023] 13996 --- [http-nio-auto-1-exec-3] c.b.service.controller.BandController    : Have been called the getDiscsByIdBand method on the BandController class
+2023-01-18 19:18:40.091  INFO [band-service,15f11569da4435d4,04798651cda3e023] 13996 --- [http-nio-auto-1-exec-3] com.band.service.service.BandService     : Have been called the getDiscByIdBand method on the BandService class
+2023-01-18 19:18:40.586  INFO [disc-service,,] 19876 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-18 19:18:40.587  INFO [disc-service,,] 19876 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-18 19:18:40.592  INFO [disc-service,,] 19876 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-01-18 19:18:40.696  INFO [disc-service,15f11569da4435d4,dbace02b6a3c1f2d] 19876 --- [http-nio-auto-1-exec-1] c.d.service.controller.DiscController    : Have been called the getDiscByIdBand method on the DiscController class
+2023-01-18 19:18:40.697  INFO [disc-service,15f11569da4435d4,dbace02b6a3c1f2d] 19876 --- [http-nio-auto-1-exec-1] com.disc.service.service.DiscService     : Have been called the getDiscsByIdBand method on the DiscService class
+2023-01-18 19:18:40.858  INFO [disc-service,15f11569da4435d4,dbace02b6a3c1f2d] 19876 --- [http-nio-auto-1-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:15}] to localhost:27002
+2023-01-18 19:18:45.147  INFO [disc-service,736270ea165abb54,607970d8889c4a9d] 19876 --- [http-nio-auto-1-exec-2] c.d.service.controller.DiscController    : Have been called the listDisc method on the DiscController class
+2023-01-18 19:18:45.148  INFO [disc-service,736270ea165abb54,607970d8889c4a9d] 19876 --- [http-nio-auto-1-exec-2] com.disc.service.service.DiscService     : Have been called the getAll method on the DiscService class
+2023-01-18 19:18:50.025  INFO [disc-service,5ecde91d3dc0f7ae,78a5c2836cd4f0d9] 19876 --- [http-nio-auto-1-exec-3] c.d.service.controller.DiscController    : Have been called the listLiveDiscs method on the DiscController class
+2023-01-18 19:18:50.026  INFO [disc-service,5ecde91d3dc0f7ae,78a5c2836cd4f0d9] 19876 --- [http-nio-auto-1-exec-3] com.disc.service.service.DiscService     : Have been called the getLiveDiscs method on the DiscService class
+2023-01-18 19:18:59.980  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
+2023-01-18 19:19:59.994  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 13ms
+2023-01-18 19:20:49.735  INFO [genre-service,,] 21032 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:20:49.737  INFO [genre-service,,] 21032 --- [RMI TCP Connection(17)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GENRE-SERVICE with eureka with status DOWN
+2023-01-18 19:20:49.738  INFO [genre-service,,] 21032 --- [RMI TCP Connection(17)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674066049738, current=DOWN, previous=UP]
+2023-01-18 19:20:49.738  INFO [genre-service,,] 21032 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GENRE-SERVICE/local.inventia.biz:genre-service:0: registering service...
+2023-01-18 19:20:49.755  INFO [eureka-service,96ad7a3d42b0d66b,96ad7a3d42b0d66b] 24100 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GENRE-SERVICE/local.inventia.biz:genre-service:0 with status DOWN (replication=false)
+2023-01-18 19:20:49.758  INFO [genre-service,,] 21032 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GENRE-SERVICE/local.inventia.biz:genre-service:0 - registration status: 204
+2023-01-18 19:20:50.292  INFO [eureka-service,c862104e54510fbf,c862104e54510fbf] 24100 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GENRE-SERVICE/local.inventia.biz:genre-service:0 with status DOWN (replication=true)
+2023-01-18 19:20:50.709  INFO [genre-service,,] 21032 --- [RMI TCP Connection(17)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-18 19:20:54.861  INFO [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:20:54.864  INFO [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DISC-SERVICE with eureka with status DOWN
+2023-01-18 19:20:54.864  INFO [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674066054864, current=DOWN, previous=UP]
+2023-01-18 19:20:54.865  INFO [disc-service,,] 19876 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DISC-SERVICE/local.inventia.biz:disc-service:0: registering service...
+2023-01-18 19:20:54.877  INFO [eureka-service,4459af31769727bf,4459af31769727bf] 24100 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance DISC-SERVICE/local.inventia.biz:disc-service:0 with status DOWN (replication=false)
+2023-01-18 19:20:54.880  INFO [disc-service,,] 19876 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DISC-SERVICE/local.inventia.biz:disc-service:0 - registration status: 204
+2023-01-18 19:20:55.406  INFO [eureka-service,bd62bb6430849db8,bd62bb6430849db8] 24100 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance DISC-SERVICE/local.inventia.biz:disc-service:0 with status DOWN (replication=true)
+2023-01-18 19:20:55.855  INFO [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-18 19:20:55.862  INFO [disc-service,,] 19876 --- [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:20:55.862  INFO [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-18 19:20:55.877  WARN [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ app//zipkin2.reporter.ByteBoundedQueue.drainTo(ByteBoundedQueue.java:81)
+ app//zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:270)
+ app//zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:55.918  INFO [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:15}] to localhost:27002 because the pool has been closed.
+2023-01-18 19:20:56.235  INFO [disc-service,,] 19876 --- [RMI TCP Connection(17)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2023-01-18 19:20:58.678  INFO [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:20:58.681  INFO [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application BAND-SERVICE with eureka with status DOWN
+2023-01-18 19:20:58.681  INFO [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674066058681, current=DOWN, previous=UP]
+2023-01-18 19:20:58.682  INFO [band-service,,] 13996 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0: registering service...
+2023-01-18 19:20:58.705  INFO [eureka-service,e5f2acd70bb5a825,e5f2acd70bb5a825] 24100 --- [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BAND-SERVICE/local.inventia.biz:band-service:0 with status DOWN (replication=false)
+2023-01-18 19:20:58.708  INFO [band-service,,] 13996 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_BAND-SERVICE/local.inventia.biz:band-service:0 - registration status: 204
+2023-01-18 19:20:59.147  INFO [band-service,,] 13996 --- [RMI TCP Connection(22)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:20:59.243  INFO [eureka-service,b7a8aba2477c923a,b7a8aba2477c923a] 24100 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance BAND-SERVICE/local.inventia.biz:band-service:0 with status DOWN (replication=true)
+2023-01-18 19:20:59.412  INFO [band-service,,] 13996 --- [RMI TCP Connection(23)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:20:59.708  INFO [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-18 19:20:59.715  INFO [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-18 19:20:59.715  INFO [band-service,,] 13996 --- [RMI TCP Connection(24)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:20:59.730  WARN [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='63c8353a62ef4b221658368e', description='null'}-localhost:27001] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForSignalOrTimeout(DefaultServerMonitor.java:294)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.waitForNext(DefaultServerMonitor.java:275)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:170)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:59.732  WARN [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='63c8353a62ef4b221658368e', description='null'}-localhost:27001] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.waitForNext(DefaultServerMonitor.java:435)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.access$1300(DefaultServerMonitor.java:57)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeRunnable.run(DefaultServerMonitor.java:409)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:59.734  WARN [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2081)
+ java.base@11.0.13/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:433)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:59.735  WARN [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ app//zipkin2.reporter.ByteBoundedQueue.drainTo(ByteBoundedQueue.java:81)
+ app//zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:270)
+ app//zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:59.737  WARN [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [boundedElastic-evictor-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ java.base@11.0.13/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@11.0.13/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:59.739  WARN [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [parallel-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2081)
+ java.base@11.0.13/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1170)
+ java.base@11.0.13/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:59.740  WARN [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [pool-14-thread-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2081)
+ java.base@11.0.13/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1170)
+ java.base@11.0.13/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:20:59.791  INFO [band-service,,] 13996 --- [RMI TCP Connection(20)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:20}] to localhost:27001 because the pool has been closed.
+2023-01-18 19:21:00.007  INFO [eureka-service,,] 24100 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 12ms
+2023-01-18 19:21:02.241  INFO [gateway-service,,] 24236 --- [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:21:02.243  INFO [gateway-service,,] 24236 --- [RMI TCP Connection(18)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GATEWAY-SERVICE with eureka with status DOWN
+2023-01-18 19:21:02.244  INFO [gateway-service,,] 24236 --- [RMI TCP Connection(18)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1674066062244, current=DOWN, previous=UP]
+2023-01-18 19:21:02.244  INFO [gateway-service,,] 24236 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080: registering service...
+2023-01-18 19:21:02.251  INFO [eureka-service,164bf13e835cbc36,164bf13e835cbc36] 24100 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080 with status DOWN (replication=false)
+2023-01-18 19:21:02.259  INFO [gateway-service,,] 24236 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080 - registration status: 204
+2023-01-18 19:21:02.789  INFO [eureka-service,ec1129446bddef99,ec1129446bddef99] 24100 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/local.inventia.biz:gateway-service:8080 with status DOWN (replication=true)
+2023-01-18 19:21:04.858  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:21:04.860  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
+2023-01-18 19:21:05.090  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(22)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:21:05.285  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(23)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:21:05.522  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(24)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:21:05.624  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(25)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:21:05.797  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(26)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-01-18 19:21:05.846  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-01-18 19:21:05.851  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-01-18 19:21:05.865  WARN [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.park(LockSupport.java:194)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2081)
+ java.base@11.0.13/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:433)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1054)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1114)
+ java.base@11.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:21:05.866  WARN [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@11.0.13/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@11.0.13/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:234)
+ java.base@11.0.13/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2123)
+ app//zipkin2.reporter.ByteBoundedQueue.drainTo(ByteBoundedQueue.java:81)
+ app//zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:270)
+ app//zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+ java.base@11.0.13/java.lang.Thread.run(Thread.java:834)
+2023-01-18 19:21:05.876  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2023-01-18 19:21:05.890  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2023-01-18 19:21:05.925  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2023-01-18 19:21:05.926  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2023-01-18 19:21:05.929  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2023-01-18 19:21:05.943  INFO [eureka-service,,] 24100 --- [RMI TCP Connection(21)-127.0.0.1] c.n.eureka.DefaultEurekaServerContext    : Shut down

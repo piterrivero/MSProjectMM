@@ -19,7 +19,7 @@ inside this folder we have to create the file logstash.conf with the next code:
 
 input {
 	file {
-		path => "/logstash_dir/logs/elk-stack.log"
+		path => "C:/Users/esu99pitrive/Desktop/developer/msproject/logstash/elk-stack.log"
 		start_position => "beginning"
 	}
 }

@@ -127,51 +127,50 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.3.3
-    container_name: elasticsearch_springboot
-    environment:
-        - bootstrap.memory_lock=true
-        - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-        - "discovery.type=single-node"
-        - xpack.security.enabled=false
-    ports:
-        - "9200:9200"
+  Elasticsearch:
+    image: elasticsearch:7.16.2
+    container_name: elasticsearch
+    restart: always
     volumes:
-        - elasticsearch_data:/usr/share/elasticsearch/data
-    networks:
-        - elastic
-
-  kibana:
-    image: docker.elastic.co/kibana/kibana:8.3.3
-    container_name: kibana_springboot
-    ports:
-        - "5601:5601"
+    - elastic_data:/usr/share/elasticsearch/data/
     environment:
-        ELASTICSEARCH_URL: http://elasticsearch:9200
-        ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
-    depends_on:
-        - elasticsearch
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: single-node    
+    ports:
+    - '9200:9200'
+    - '9300:9300'
     networks:
-        - elastic
+      - elk
 
-  logstash:
-    image: docker.elastic.co/logstash/logstash:8.3.3
-    container_name: logstash_springboot
+  Logstash:
+    image: logstash:7.16.2
+    container_name: logstash
+    restart: always
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
-      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
-    ports:
-      - "5044:5044"
-      - "5000:5000/tcp"
-      - "5000:5000/udp"
-      - "9600:9600"
-    environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
-    networks:
-      - elastic
+    - ./logstash/:/logstash_dir
+    #- ../../../logstash/:/logstash_dir/logs/
+    command: logstash -f /logstash_dir/logstash.conf
     depends_on:
-      - elasticsearch
+      - Elasticsearch
+    ports:
+    - '9600:9600'
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"    
+    networks:
+      - elk
+
+  Kibana:
+    image: kibana:7.16.2
+    container_name: kibana
+    restart: always       
+    ports:
+    - '5601:5601'
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200  
+    depends_on:
+      - Elasticsearch  
+    networks:
+      - elk
 
 volumes:
   mongodb-band-data:
@@ -181,9 +180,7 @@ volumes:
   mongodb-order-data:
   mongodb-payment-data:
   mongodb-notification-data:
-  elasticsearch_data:
-      driver: local
+  elastic_data: {}
   
 networks:
-  elastic:
-    driver: bridge
+  elk:

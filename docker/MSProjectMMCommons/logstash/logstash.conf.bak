@@ -1,0 +1,13 @@
+input {
+	file {
+		path => "/logstash_dir/elk-stack.log"
+		start_position => "beginning"
+	}
+}
+
+output {
+	elasticsearch {
+		host => ["localhost:9200"]
+		index => "logstash"
+	}
+}
