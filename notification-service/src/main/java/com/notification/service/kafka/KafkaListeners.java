@@ -21,6 +21,7 @@ public class KafkaListeners {
 	public void listenerNotification(Notification notification) {
 		log.info("Have been called the listenerNotification method on the class KafkaListeners");
 		log.info("topic: Received Message of topic: processNotificationTopic.");
+		notificationService.save(notification);
 	}
 
 }
