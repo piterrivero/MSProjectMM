@@ -44,6 +44,7 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/security/spring-security-crypto/5.5.2/spring-security-crypto-5.5.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/io/github/openfeign/feign-core/10.12/feign-core-10.12.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/io/github/openfeign/feign-slf4j/10.12/feign-slf4j-10.12.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/mongodb/mongo-java-driver/2.11.1/mongo-java-driver-2.11.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/cloud/spring-cloud-starter-netflix-eureka-client/3.0.3/spring-cloud-starter-netflix-eureka-client-3.0.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/cloud/spring-cloud-netflix-eureka-client/3.0.3/spring-cloud-netflix-eureka-client-3.0.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/netflix/eureka/eureka-client/1.10.14/eureka-client-1.10.14.jar" enabled="true" runInBatchMode="false"/>
