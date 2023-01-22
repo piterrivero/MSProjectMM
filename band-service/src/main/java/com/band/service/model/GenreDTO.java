@@ -1,4 +1,4 @@
-package model;
+package com.band.service.model;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class Genre {
+public class GenreDTO {
 
 	private String genre;
 }

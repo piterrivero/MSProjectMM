@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.band.service.entity.Band;
+import com.band.service.model.DiscDTO;
+import com.band.service.model.GenreDTO;
 import com.band.service.service.BandService;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
-import model.Disc;
-import model.Genre;
 
 @Slf4j
 @RestController
@@ -62,14 +62,14 @@ public class BandController {
 	
 	@CircuitBreaker(name = "discCB",fallbackMethod = "fallBackSaveDisc")
 	@PostMapping("/disc/{idBand}")
-	public ResponseEntity<Disc> saveDisc(@PathVariable("idBand") int idBand, @RequestBody Disc disc){
+	public ResponseEntity<DiscDTO> saveDisc(@PathVariable("idBand") int idBand, @RequestBody DiscDTO disc){
 		log.info("Have been called the saveDisc method");
 		disc.setIdBand(idBand);
-		Disc newDisc = bandService.saveDisc(disc);
+		DiscDTO newDisc = bandService.saveDisc(disc);
 		return ResponseEntity.ok(newDisc);
 	} 
 
-	public ResponseEntity<Disc> fallBackSaveDisc(@PathVariable("idBand") int idBand, @RequestBody Disc disc, RuntimeException excepcion){
+	public ResponseEntity<DiscDTO> fallBackSaveDisc(@PathVariable("idBand") int idBand, @RequestBody DiscDTO disc, RuntimeException excepcion){
 		log.info("Have been called the fallBackSaveDisc method on the BandController class");
 		log.info("The band can not be saved in this moment, please try later");
 		return new ResponseEntity("The band can not be saved in this moment, please try later", HttpStatus.OK);
@@ -77,13 +77,13 @@ public class BandController {
 	
 	@Retry(name = "discCB", fallbackMethod = "fallBackGetDiscsByIdBand")
 	@GetMapping("/disc/{idBand}")
-	public ResponseEntity<List<Disc>> getDiscsByIdBand(@PathVariable("idBand") long idBand){
+	public ResponseEntity<List<DiscDTO>> getDiscsByIdBand(@PathVariable("idBand") long idBand){
 		log.info("Have been called the getDiscsByIdBand method on the BandController class");
-		List<Disc> discs = bandService.getDiscByIdBand(idBand);
+		List<DiscDTO> discs = bandService.getDiscByIdBand(idBand);
 		return ResponseEntity.ok(discs);
 	}
 	
-	public ResponseEntity<List<Disc>> fallBackGetDiscsByIdBand(@PathVariable("idBand") long idBand, RuntimeException excepcion){
+	public ResponseEntity<List<DiscDTO>> fallBackGetDiscsByIdBand(@PathVariable("idBand") long idBand, RuntimeException excepcion){
 		log.info("Have been called the fallBackGetDiscsByIdBand method on the BandController class");
 		log.info("Right now the disc can not be found, please try later");
 		return new ResponseEntity("Right now the disc can not be found, please try later", HttpStatus.OK);
@@ -91,13 +91,13 @@ public class BandController {
 	
 	@CircuitBreaker(name = "genreCB",fallbackMethod = "fallBackGetGenreById")
 	@GetMapping("/genre/{idGenre}")
-	public ResponseEntity<Genre> getGenreById(@PathVariable("idGenre") long idGenre){
+	public ResponseEntity<GenreDTO> getGenreById(@PathVariable("idGenre") long idGenre){
 		log.info("Have been called the getGenreById method");
-		Genre genre = bandService.getGenreById(idGenre);
+		GenreDTO genre = bandService.getGenreById(idGenre);
 		return ResponseEntity.ok(genre);
 	}
 	
-	public ResponseEntity<Genre> fallBackGetGenreById(@PathVariable("idGenre") long idGenre, RuntimeException excepcion){
+	public ResponseEntity<GenreDTO> fallBackGetGenreById(@PathVariable("idGenre") long idGenre, RuntimeException excepcion){
 		log.info("Have been called the fallBackGetGenreById method on the BandController class");
 		log.info("Right now the genre can not be found, please try later");
 		return new ResponseEntity("Right now the genre can not be found, please try later", HttpStatus.OK);

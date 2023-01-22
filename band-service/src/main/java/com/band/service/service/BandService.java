@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import com.band.service.entity.Band;
 import com.band.service.feignclients.DiscFeignClient;
 import com.band.service.feignclients.GenreFeignClient;
+import com.band.service.model.DiscDTO;
+import com.band.service.model.GenreDTO;
 import com.band.service.repository.BandRepository;
 
 import lombok.extern.slf4j.Slf4j;
-import model.Disc;
-import model.Genre;
 
 @Slf4j
 @Service
@@ -48,17 +48,17 @@ public class BandService {
 		return bandRepository.save(band);
 	}
 	
-	public Disc saveDisc(Disc disc) {
+	public DiscDTO saveDisc(DiscDTO disc) {
 		log.info("Have been called the saveDisc method on the BandService class");
 		return discFeignClient.saveDisc(disc);
 	}
 	
-	public Genre getGenreById(long id) {
+	public GenreDTO getGenreById(long id) {
 		log.info("Have been called the getGenreById method on the BandService class");
 		return genreFeignClient.getGenreById(id);
 	}	
 	
-	public List<Disc> getDiscByIdBand(long id){
+	public List<DiscDTO> getDiscByIdBand(long id){
 		log.info("Have been called the getDiscByIdBand method on the BandService class");
 		return discFeignClient.listDiscsByIdBand(id);
 	}

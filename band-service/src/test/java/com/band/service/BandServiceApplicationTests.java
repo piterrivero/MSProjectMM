@@ -17,12 +17,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.band.service.entity.Band;
 import com.band.service.feignclients.DiscFeignClient;
 import com.band.service.feignclients.GenreFeignClient;
+import com.band.service.model.DiscDTO;
+import com.band.service.model.GenreDTO;
 import com.band.service.repository.BandRepository;
 import com.band.service.service.BandService;
 import com.band.service.service.SequenceGeneratorService;
-
-import model.Disc;
-import model.Genre;
 
 @ExtendWith(MockitoExtension.class)
 class BandServiceApplicationTests {
@@ -42,7 +41,7 @@ class BandServiceApplicationTests {
 	private BandService bandService;
 
 	private static List<Band> bandListMock;
-	private static List<Disc> discListMock;
+	private static List<DiscDTO> discListMock;
 	
 	@BeforeAll
 	static void init() {
@@ -50,8 +49,8 @@ class BandServiceApplicationTests {
 		bandListMock.add(Band.builder().id(1).idGenre(1).name("Iron Maiden").build());
 		
 		discListMock = new ArrayList<>();
-		discListMock.add(Disc.builder().title("Fear of the dark").year("1992").idBand(1).build());
-		discListMock.add(Disc.builder().title("Live After Death").year("1985").idBand(1).build());
+		discListMock.add(DiscDTO.builder().title("Fear of the dark").year("1992").idBand(1).build());
+		discListMock.add(DiscDTO.builder().title("Live After Death").year("1985").idBand(1).build());
 	}
 	
 	@Test
@@ -94,10 +93,10 @@ class BandServiceApplicationTests {
 	@Test
 	public void shouldSaveDisc() {
 		// GIVEN
-		Disc discMock = Disc.builder().title("Black Ice").year("2008").idBand(2).build();
+		DiscDTO discMock = DiscDTO.builder().title("Black Ice").year("2008").idBand(2).build();
 		when(discFeignClient.saveDisc(discMock)).thenReturn(discMock);
 		// WHEN
-		Disc disc = bandService.saveDisc(discMock);
+		DiscDTO disc = bandService.saveDisc(discMock);
 		// THEN
 		assertThat(disc).isNotNull();
 		assertThat(disc.getTitle()).isEqualTo("Black Ice");
@@ -106,10 +105,10 @@ class BandServiceApplicationTests {
 	@Test
 	public void shouldGetGenreById() {
 		// GIVEN
-		Genre genreMock = Genre.builder().genre("Trash Metal").build();
+		GenreDTO genreMock = GenreDTO.builder().genre("Trash Metal").build();
 		when(genreFeignClient.getGenreById(1)).thenReturn(genreMock);
 		// WHEN
-		Genre genre = bandService.getGenreById(1);
+		GenreDTO genre = bandService.getGenreById(1);
 		// THEN
 		assertThat(genre).isNotNull();
 		assertThat(genre.getGenre()).isEqualTo("Trash Metal");
@@ -120,7 +119,7 @@ class BandServiceApplicationTests {
 		// GIVEN
 		when(discFeignClient.listDiscsByIdBand(1)).thenReturn(discListMock);
 		// WHEN
-		List<Disc> discList = bandService.getDiscByIdBand(1);
+		List<DiscDTO> discList = bandService.getDiscByIdBand(1);
 		// THEN
 		assertThat(discList).isNotNull()
 							.isNotEmpty()

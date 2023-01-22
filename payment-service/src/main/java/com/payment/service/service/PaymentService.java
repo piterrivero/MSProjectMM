@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.payment.service.entity.Payment;
 import com.payment.service.kafka.KafkaSender;
-import com.payment.service.model.Order;
+import com.payment.service.model.OrderDTO;
 import com.payment.service.repository.PaymentRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +34,7 @@ public class PaymentService {
 		return paymentRepository.findById(id).orElse(null);
 	}
 	
-	public void processPayment(Order order) {
+	public void processPayment(OrderDTO order) {
 		log.info("Have been called the processPayment method on the PaymentService class");
 //		TODO verify budget of the client
 		Payment payment = Payment.builder().totalPayment(order.getTotalOrder()).status(false).build();

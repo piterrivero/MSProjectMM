@@ -1,5 +1,7 @@
 package com.payment.service.model;
 
+import java.util.List;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,16 +9,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class Detail {
+public class OrderDTO {
 	
 	private long id;
+
+	private List<DetailDTO> details;
 	
-	private int orderId;
+	private long totalOrder;
 	
-	private int discId;
-	
-	private int quantity;
-	
-	private long totalDetail;
+	private boolean status;
 
 }

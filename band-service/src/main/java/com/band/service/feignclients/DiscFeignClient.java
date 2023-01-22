@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import model.Disc;
+import com.band.service.model.DiscDTO;
 
 @FeignClient(name = "disc-service")
 @RequestMapping("/disc")
 public interface DiscFeignClient {
 
 	@PostMapping()
-	public Disc saveDisc(@RequestBody Disc disc);
+	public DiscDTO saveDisc(@RequestBody DiscDTO disc);
 	
 	@GetMapping("/band/{idBand}")
-	public List<Disc> listDiscsByIdBand(@PathVariable("idBand") long idBand);
+	public List<DiscDTO> listDiscsByIdBand(@PathVariable("idBand") long idBand);
 	
 }

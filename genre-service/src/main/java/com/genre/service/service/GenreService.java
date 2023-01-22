@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.genre.service.entity.Genre;
 import com.genre.service.kafka.KafkaSender;
-import com.genre.service.model.Notification;
+import com.genre.service.model.NotificationDTO;
 import com.genre.service.repository.GenreRepository;
 
 import lombok.extern.slf4j.Slf4j;
@@ -42,7 +42,7 @@ public class GenreService {
 		log.info("Have been called the save method on the GenreService class");
 		genre.setId(sequenceGenerator.generateSequence(Genre.SEQUENCE_NAME));
 		String description = "The genre "+genre.getGenre() + " was saved successfully";
-		kafkaSender.sendMessageObject("processNotificationTopic", Notification.builder().description(description).notificationDate(LocalDateTime.now()).build());
+		kafkaSender.sendMessageObject("processNotificationTopic", NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
 		return genreRepository.save(genre);
 	}
 
