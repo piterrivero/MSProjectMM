@@ -18,6 +18,20 @@ spring:
       database: customer
   application:
     zipkin: http://localhost:9411
+  kafka:
+    bootstrap-servers: localhost:29092,localhost:39092
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     
 springdoc:
   swagger-ui:

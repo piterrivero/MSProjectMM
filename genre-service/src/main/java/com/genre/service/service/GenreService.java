@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.genre.service.configuration.KafkaTopicConfig;
 import com.genre.service.entity.Genre;
 import com.genre.service.kafka.KafkaSender;
 import com.genre.service.model.NotificationDTO;
@@ -41,8 +42,10 @@ public class GenreService {
 	public Genre save(Genre genre) {
 		log.info("Have been called the save method on the GenreService class");
 		genre.setId(sequenceGenerator.generateSequence(Genre.SEQUENCE_NAME));
+		
 		String description = "The genre "+genre.getGenre() + " was saved successfully";
-		kafkaSender.sendMessage("processNotificationTopic", NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+		kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+		
 		return genreRepository.save(genre);
 	}
 
@@ -50,11 +53,20 @@ public class GenreService {
 		log.info("Have been called the update method on the GenreService class");
 		Genre toUpdate = getGenreById(id);
 		toUpdate.setGenre(genre.getGenre());
+		
+		String description = "The genre "+toUpdate.getGenre() + " was updated successfully";
+		kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+		
 		return genreRepository.save(toUpdate);
 	}
 
 	public void delete(int id) {
 		log.info("Have been called the delete method on the GenreService class");
+		Genre toDelete = getGenreById(id);
+		
+		String description = "The genre "+toDelete.getGenre() + " was deleted successfully";
+		kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+		
 		genreRepository.deleteById(id);
 	}
 

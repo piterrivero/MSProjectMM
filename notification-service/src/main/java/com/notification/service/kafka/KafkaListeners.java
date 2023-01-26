@@ -17,8 +17,7 @@ public class KafkaListeners {
 	@Autowired
 	private NotificationService notificationService;
 
-	// Listening a complex type
-	@KafkaListener(topics = "processNotificationTopic", groupId = "group1")
+	@KafkaListener(topics = "processNotificationTopic", groupId = "group1", containerFactory = "notificationDTOListenerContainerFactory")
 	public void listenerNotification(NotificationDTO notificationDTO) {
 		log.info("Have been called the listenerNotification method on the class KafkaListeners");
 		log.info("topic: Received Message of topic: processNotificationTopic.");

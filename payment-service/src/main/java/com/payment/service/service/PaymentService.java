@@ -40,7 +40,7 @@ public class PaymentService {
 		Payment payment = Payment.builder().totalPayment(order.getTotalOrder()).status(false).build();
 		payment.setId(sequenceGenerator.generateSequence(Payment.SEQUENCE_NAME));
 		paymentRepository.save(payment);
-		kafkaSender.sendMessageObject("processPaymentTopic", payment);
+		kafkaSender.sendMessage("processPaymentTopic", payment);
 	}
 	
 }

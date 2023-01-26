@@ -33,6 +33,7 @@
 	<openapi.version>1.6.4</openapi.version>
 	<spring-kafka.version>2.7.6</spring-kafka.version>
 	<logstash.logback.version>7.2</logstash.logback.version>
+	<jackson-datatype.version>2.11.3</jackson-datatype.version>
   </properties>
   
   <dependencyManagement>
@@ -58,6 +59,11 @@
 				<groupId>net.logstash.logback</groupId>
 				<artifactId>logstash-logback-encoder</artifactId>
 				<version>${logstash.logback.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>com.fasterxml.jackson.datatype</groupId>
+			    <artifactId>jackson-datatype-jsr310</artifactId>
+			    <version>${jackson-datatype.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -102,6 +108,10 @@
 		<dependency>
 			<groupId>net.logstash.logback</groupId>
 			<artifactId>logstash-logback-encoder</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.datatype</groupId>
+		    <artifactId>jackson-datatype-jsr310</artifactId>
 		</dependency>
 	</dependencies>
   
