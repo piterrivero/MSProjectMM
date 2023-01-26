@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idGenre\" : \"4\",\r\n    \"name\" : \"Cannibal Corpse\",\r\n    \"country\" : \"USA\"\r\n}",
+							"raw": "{\r\n    \"idGenre\" : \"13\",\r\n    \"name\" : \"Banda de test\",\r\n    \"country\" : \"Venezuela\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -62,6 +62,55 @@
 								"band",
 								"disc",
 								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Band",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idGenre\" : \"12\",\r\n    \"name\" : \"Banda de test mod\",\r\n    \"country\" : \"Venezuela\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/band/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"band",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Band",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/band/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"band",
+								"12"
 							]
 						}
 					},
@@ -181,7 +230,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idBand\" : \"3\",\r\n    \"title\" : \"The Wretched Spawn\",\r\n    \"year\" : \"2004\"\r\n}",
+							"raw": "{\r\n    \"idBand\" : \"11\",\r\n    \"title\" : \"Disc Test\",\r\n    \"year\" : \"1997\",\r\n    \"price\" : \"20\",\r\n    \"stock\" : \"3\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -197,6 +246,55 @@
 							"port": "8080",
 							"path": [
 								"disc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update disc",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idBand\" : \"11\",\r\n    \"title\" : \"Disc Test mod\",\r\n    \"year\" : \"1997\",\r\n    \"price\" : \"20\",\r\n    \"stock\" : \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/disc/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"disc",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Disc",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/disc/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"disc",
+								"20"
 							]
 						}
 					},
@@ -273,7 +371,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"genre\" : \"delete\"\r\n}",
+							"raw": "{\r\n    \"genre\" : \"Pop\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -289,6 +387,55 @@
 							"port": "8080",
 							"path": [
 								"genre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update genre",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"genre\" : \"Popa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/genre/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genre",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Genre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/genre/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"genre",
+								"23"
 							]
 						}
 					},
@@ -332,15 +479,20 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
 				{
-					"name": "Update genre",
+					"name": "Save Customer",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"genre\" : \"Heavy Metal\"\r\n}",
+							"raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"surname\" : \"Lopez\",\r\n    \"budget\" : \"500\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -348,14 +500,81 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/genre/1",
+							"raw": "http://localhost:8080/customer",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"genre",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Juan\",\r\n    \"surname\" : \"Looopesz\",\r\n    \"budget\" : \"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
 								"1"
 							]
 						}
@@ -363,20 +582,64 @@
 					"response": []
 				},
 				{
-					"name": "Delete Genre",
+					"name": "Delete Customer",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/genre/6",
+							"raw": "http://localhost:8080/customer/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"genre",
-								"6"
+								"customer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "List Notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/notification/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"notification",
+								"17"
 							]
 						}
 					},
