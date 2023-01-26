@@ -42,7 +42,7 @@ public class GenreService {
 		log.info("Have been called the save method on the GenreService class");
 		genre.setId(sequenceGenerator.generateSequence(Genre.SEQUENCE_NAME));
 		String description = "The genre "+genre.getGenre() + " was saved successfully";
-		kafkaSender.sendMessageObject("processNotificationTopic", NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+		kafkaSender.sendMessage("processNotificationTopic", NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
 		return genreRepository.save(genre);
 	}
 
