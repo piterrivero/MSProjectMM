@@ -5,4 +5,4 @@ path:
 xpack:
   monitoring:
     elasticsearch:
-      hosts: [ "localhost:9200" ]
+      hosts: [ "elasticsearch:9200" ]

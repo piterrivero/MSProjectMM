@@ -1,0 +1,7 @@
+To check the connectivity between containers we have to do a ping
+
+1.- inside the container:
+
+	apt-get update
+	apt-get install inetutils-ping
+	ping logstash (or any other container name)
