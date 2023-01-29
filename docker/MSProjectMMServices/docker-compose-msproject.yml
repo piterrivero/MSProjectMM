@@ -11,11 +11,11 @@ services:
     networks:
       - msproject
         
-  eureka-service:
+  eureka-server-service:
     image: piterrivero/eureka-service:latest
     environment:
       - "SPRING_PROFILES_ACTIVE=docker"
-    container_name: eureka-sevice
+    container_name: eureka-server-sevice
     ports:
       - "8761:8761"
     depends_on:
@@ -35,7 +35,7 @@ services:
       - LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY= TRACE
     depends_on:
       - config-service
-      - eureka-service
+      - eureka-server-service
     networks:
       - msproject    
       
