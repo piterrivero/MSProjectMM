@@ -15,7 +15,7 @@ services:
     image: piterrivero/eureka-service:latest
     environment:
       - "SPRING_PROFILES_ACTIVE=docker"
-    container_name: eureka-server-sevice
+    container_name: eureka-server-service
     ports:
       - "8761:8761"
     depends_on:
