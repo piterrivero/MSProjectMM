@@ -1,5 +1,5 @@
 server:
-  port: 8087
+  port: 8085
 eureka:
   client:
     fetch-registry: true
@@ -7,4 +7,4 @@ eureka:
     service-url:
       default-zone: http://eureka-service:8761/eureka
     instance:
-      hostname: localhost
+      hostname: localhostx
