@@ -1,0 +1,21 @@
+1.- Microservices with spring boot
+
+2.- Spring cloud config server: in order to have the configuration files centralized in a hithub repository.
+    for this scope the applications.yml of each project are in the config-data folder, and in this project
+    there is a bootstrap.yml file indicating the github repository and path where to find the configurations.
+
+3.- Service discovery eureka
+
+4.- Api gateway: in order to have an unique endpoint (one unique port Ej. 8080 for all the services)
+
+5.- Resilience4j to manage the resilience of the services, this provide mechanisms of cirquit break (@CircuitBreaker, making possible
+    to catch any problem when one service call other and making available a fallbackMethod to call in this cases) and
+    retry (@Retry to make possible the retry of a call when there is any problem calling a service). These examples can be
+    verified on the microservice band-service in the BandController file (this is where they are used) and in the folder config-data
+    in the file band-service.yaml (this is where there is the configuration).
+    
+    
+    
+Pending
+
+mvn clean compile jib:build    
