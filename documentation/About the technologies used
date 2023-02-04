@@ -14,8 +14,19 @@
     verified on the microservice band-service in the BandController file (this is where they are used) and in the folder config-data
     in the file band-service.yaml (this is where there is the configuration).
     
-    
-    
-Pending
+6.- Kafka: Some of the calls service to service are asyncronous so for this issue it was used kafka. You can see in each
+    save, update or delete of band, genre or disc for example the send notification message and in the notifications
+    service the listener of that topic.
 
-mvn clean compile jib:build    
+7.- ELK (Elastic search, logstash, kibana) to have the logs centralizes. On the docker folder, inside the MSProjectMMCommons
+    there is a folder called logstash, this folder will be mounted inside the logstash container and in the config folder
+    you can see an example of configuration file and in the pipeline an example of a simle pipeline
+
+8.- Zipkin Sleuth: It is used to the distribiuted traced of the microservices and their interactions. In the yml files of the
+    microservices it can be saw the example of the simple configuration.
+
+9.- JIB: to dockerize the service we are using the JIB plugin. It is configured in the parent pom.xml and follow the
+    command "mvn clean compile jib:build" the project is compiled and upload to the dockerhub configured in the
+    plugin configuration. In this way afterward it can be download when it is added on some docker-compose.yml.
+    See the docker-compose-msproject.xml found inside the MSProjectMMService folder.
+
