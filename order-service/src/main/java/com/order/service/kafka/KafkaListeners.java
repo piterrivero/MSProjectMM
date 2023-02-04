@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 public class KafkaListeners {
 	
 	// Listening a complex type
-	@KafkaListener(topics = "processPaymentTopic", groupId = "group1", containerFactory = "objectKafkaListenerContainerFactory")
+	@KafkaListener(topics = "processPaymentTopic", groupId = "group1", containerFactory = "paymentDTOListenerContainerFactory")
 	public void listenerPayment(PaymentDTO payment) {
 		log.info("Have been called the listenerPayment method on the KafkaListeners class");
 		log.info("topic: Received Message of topic: processPaymentTopic on listenerPayment. Payment status: "+payment.isStatus());

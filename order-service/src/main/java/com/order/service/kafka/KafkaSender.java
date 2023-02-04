@@ -1,23 +1,31 @@
 package com.order.service.kafka;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Component;
-
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
 public class KafkaSender {
 
-	@Autowired
-	@Qualifier("objectKafkaTemplate")
-	private KafkaTemplate<String, Object> objectKafkaTemplate;
-	
-	public void sendMessageObject(String topicName, Object object) {
-		log.info("Sent a message to the topic: "+topicName);
-		objectKafkaTemplate.send(topicName, object);
-	}
-	
+    private KafkaTemplate<String, Object> kafkaTemplate;
+
+    public KafkaSender(KafkaTemplate<String, Object> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void sendMessage(String topicName, Object data) {
+        log.info("Sent a message to the topic: " + topicName);
+
+        Message<Object> message = MessageBuilder
+                .withPayload(data)
+                .setHeader(KafkaHeaders.TOPIC, topicName)
+                .build();
+
+        kafkaTemplate.send(message);
+    }
+
 }

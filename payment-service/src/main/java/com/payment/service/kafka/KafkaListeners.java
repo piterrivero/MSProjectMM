@@ -16,8 +16,7 @@ public class KafkaListeners {
 	@Autowired 
 	private PaymentService paymentService;
 	
-	// Listening a complex type
-	@KafkaListener(topics = "processOrderTopic", groupId = "group1", containerFactory = "objectKafkaListenerContainerFactory")
+	@KafkaListener(topics = "processOrderTopic", groupId = "group1", containerFactory = "orderDTOListenerContainerFactory")
 	public void listenerPayment(OrderDTO order) {
 		log.info("Have been called the listenerPayment method on the KafkaListeners class");
 		log.info("Received Message of topic: processOrderTopic on listenerPayment. Payment status: "+order.isStatus());

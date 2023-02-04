@@ -24,8 +24,6 @@ public class Detail {
 	@Id
 	private long id;
 	
-	private int orderId;
-	
 	private int discId;
 	
 	private int quantity;
