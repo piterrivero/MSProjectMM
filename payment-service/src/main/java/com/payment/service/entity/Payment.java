@@ -23,9 +23,13 @@ public class Payment {
 	
 	@Id
 	private long id;
+
+	private long idOrder;
 	
 	private long totalPayment;
 	
 	private boolean status;
+
+	private String statusMessage;
 	
 }

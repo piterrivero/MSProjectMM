@@ -36,7 +36,7 @@ public class PaymentService {
 	
 	public void processPayment(OrderDTO order) {
 		log.info("Have been called the processPayment method on the PaymentService class");
-//		TODO verify budget of the client
+//		TODO verify budget of the client respect al total order
 		Payment payment = Payment.builder().totalPayment(order.getTotalOrder()).status(false).build();
 		payment.setId(sequenceGenerator.generateSequence(Payment.SEQUENCE_NAME));
 		paymentRepository.save(payment);

@@ -1,8 +1,8 @@
 package com.payment.service.model;
 
-import java.util.List;
-
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -10,13 +10,15 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDTO {
-	
-	private long id;
 
-	private List<DetailDTO> details;
-	
-	private long totalOrder;
-	
-	private boolean status;
+    private long id;
+
+    private List<DetailDTO> details;
+
+    private long totalOrder;
+
+    private boolean status;
+
+    private String statusMessage;
 
 }

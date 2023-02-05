@@ -10,9 +10,13 @@ import lombok.*;
 public class PaymentDTO {
 	
 	private long id;
+
+	private long idOrder;
 	
 	private long totalPayment;
 	
 	private boolean status;
+
+	private String statusMessage;
 	
 }
