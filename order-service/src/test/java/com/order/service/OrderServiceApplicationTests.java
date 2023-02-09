@@ -39,7 +39,7 @@ class OrderServiceApplicationTests {
 	static void init() {
 		genreListMock = new ArrayList<>();
 		List<Detail> detailList = new ArrayList<>();
-		detailList.add(Detail.builder().id(1).orderId(1).discId(1).quantity(2).build());
+		detailList.add(Detail.builder().discId(1).quantity(2).build());
 		genreListMock.add(Order.builder().id(1).details(detailList).status(false).totalOrder(0).build());
 	}
 	
@@ -69,7 +69,7 @@ class OrderServiceApplicationTests {
 	public void shouldSaveOrder() {
 		// GIVEN
 		List<Detail> detailList = new ArrayList<>();
-		detailList.add(Detail.builder().id(1).orderId(1).discId(1).quantity(2).build());
+		detailList.add(Detail.builder().discId(1).quantity(2).build());
 		Order orderMock = Order.builder().id(2).details(detailList).status(false).totalOrder(0).build();
 		
 		when(orderRepository.save(orderMock)).thenReturn(orderMock);

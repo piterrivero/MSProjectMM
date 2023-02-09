@@ -1,10 +1,6 @@
 
 Y
 )documentation/About the technologies used,0\3\03bc93a46fcbdd0b68a951d1983c9ecb63aada6b
-w
-Ggenre-service/src/main/java/com/genre/service/service/GenreService.java,1\0\101dbfdf4a1378e86dffefce5e449f7c5a10f91e
-t
-Dgenre-service/src/main/java/com/genre/service/kafka/KafkaSender.java,8\2\8240009bf07b1762bc711513901964dd99a5dcf7
 x
 Hpayment-service/src/main/java/com/payment/service/kafka/KafkaSender.java,f\4\f4177484e3363577c23b874bbad633356e9364cb
 t
@@ -19,8 +15,6 @@ Lgenre-service/src/main/java/com/genre/service/configuration/KafkaConfig.java,1
 Qgenre-service/src/main/java/com/genre/service/configuration/KafkaTopicConfig.java,a\f\af3501b186fdda892f445adb928d37de46f8e72b
 Å
 Qorder-service/src/main/java/com/order/service/configuration/KafkaTopicConfig.java,f\b\fb6fb3d119291d357bb06e806776c68fae39a849
-w
-Ggenre-service/src/main/java/com/genre/service/kafka/KafkaListeners.java,0\0\009ea4c8d3bd8d48ca80dbd1aad50d8fe30a4a41
 Ö
 Unotification-service/src/main/java/com/notification/service/kafka/KafkaListeners.java,e\8\e876255657361111051b6787b43a0644619ea7e0
 w
@@ -57,8 +51,6 @@ w
 Gband-service/src/main/java/com/band/service/BandServiceApplication.java,f\d\fdf369983ee45e1ab0002b0a23571d477e0d5c96
 z
 Jdisc-service/src/main/java/com/disc/service/controller/DiscController.java,c\8\c876947ed90374a4e42b5757f980be575feefaed
-p
-@order-service/src/main/java/com/order/service/entity/Detail.java,b\2\b25acc29e40408690a8657112c193bfe559784bc
 w
 Gorder-service/src/main/java/com/order/service/service/OrderService.java,3\2\327f7eae2a5b73aae9d372b248fdc604aa455681
 {
@@ -73,3 +65,25 @@ u
 Epayment-service/src/main/java/com/payment/service/entity/Payment.java,3\9\3963e91cf54347a1719b41b8a05c14b0ace930df
 s
 Corder-service/src/main/java/com/order/service/model/PaymentDTO.java,3\a\3a994eb67321827d54e23db8e87809c4a1fe4ea1
+z
+Jgenre-service/src/main/java/com/genre/service/entity/DatabaseSequence.java,8\6\86b8700b7566eee03ce91aaa0969d390f32b78f3
+É
+Sgenre-service/src/main/java/com/genre/service/service/SequenceGeneratorService.java,a\9\a96877fa480cfc7784ad231a0c0059a3592e5dc3
+}
+Mgenre-service/src/main/java/com/genre/service/repository/GenreRepository.java,5\d\5d613ec630d5d1d0596438bd36d5ea3e618bf9fe
+p
+@order-service/src/main/java/com/order/service/entity/Detail.java,b\2\b25acc29e40408690a8657112c193bfe559784bc
+
+Oorder-service/src/test/java/com/order/service/OrderServiceApplicationTests.java,2\f\2f691bda808b9f29897047e49dac372f6c7b9002
+w
+Ggenre-service/src/main/java/com/genre/service/service/GenreService.java,1\0\101dbfdf4a1378e86dffefce5e449f7c5a10f91e
+q
+Agenre-service/src/main/java/com/genre/service/model/GenreDTO.java,1\f\1ff11e8eef1c73c9b1b664e8a39d91b878dfcf6f
+w
+Ggenre-service/src/main/java/com/genre/service/kafka/KafkaListeners.java,0\0\009ea4c8d3bd8d48ca80dbd1aad50d8fe30a4a41
+t
+Dgenre-service/src/main/java/com/genre/service/kafka/KafkaSender.java,8\2\8240009bf07b1762bc711513901964dd99a5dcf7
+|
+Lgenre-service/src/main/java/com/genre/service/kafka/MessageDeserializer.java,7\6\76ce0f1746dcb124bc85ab7823a38973e6951eb3
+8
+.project,f\8\f8b41ce76d7b80d2b47e91b5f92c15f00eccf187

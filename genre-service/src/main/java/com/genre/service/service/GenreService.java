@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,15 +18,13 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
+@AllArgsConstructor
 public class GenreService {
 
-	@Autowired
 	private GenreRepository genreRepository;
 	
-	@Autowired
 	private KafkaSender kafkaSender;
 
-	@Autowired
 	private SequenceGeneratorService sequenceGenerator;
 
 	public List<Genre> getAll() {
