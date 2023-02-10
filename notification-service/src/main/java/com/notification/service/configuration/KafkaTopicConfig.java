@@ -7,11 +7,11 @@ import org.springframework.kafka.config.TopicBuilder;
 
 @Configuration
 public class KafkaTopicConfig {
-    
-	@Bean
-    public NewTopic processNotificationTopic(){
+
+    @Bean
+    public NewTopic processNotificationTopic() {
         return TopicBuilder.name("processNotificationTopic")
                 .build();
     }
-   
+
 }

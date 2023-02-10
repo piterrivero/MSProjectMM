@@ -1,20 +1,18 @@
 package com.genre.service.configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Configuration
 public class KafkaConfig {
 
-	@Value("${spring.kafka.bootstrap-servers}")
+    private final ObjectMapper objectMapper;
+
+    @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
-	@Autowired
-	private ObjectMapper objectMapper;
-	
-    
-	
+    public KafkaConfig(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 }

@@ -7,12 +7,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class DiscDTO {
+public class BandDTO {
 
-    private int idBand;
+    private long id;
 
-    private String title;
+    private int idGenre;
 
-    private String year;
+    private String name;
+
+    private String country;
 
 }

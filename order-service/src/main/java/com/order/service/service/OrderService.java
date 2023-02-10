@@ -5,7 +5,6 @@ import com.order.service.feignclients.DiscFeignClient;
 import com.order.service.kafka.KafkaSender;
 import com.order.service.repository.OrderRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,17 +13,20 @@ import java.util.List;
 @Service
 public class OrderService {
 
-    @Autowired
-    private OrderRepository orderRepository;
+    private final OrderRepository orderRepository;
 
-    @Autowired
-    private SequenceGeneratorService sequenceGenerator;
+    private final SequenceGeneratorService sequenceGenerator;
 
-    @Autowired
-    private KafkaSender kafkaSender;
+    private final KafkaSender kafkaSender;
 
-    @Autowired
-    private DiscFeignClient discFeignClient;
+    private final DiscFeignClient discFeignClient;
+
+    public OrderService(OrderRepository orderRepository, SequenceGeneratorService sequenceGenerator, KafkaSender kafkaSender, DiscFeignClient discFeignClient) {
+        this.orderRepository = orderRepository;
+        this.sequenceGenerator = sequenceGenerator;
+        this.kafkaSender = kafkaSender;
+        this.discFeignClient = discFeignClient;
+    }
 
     public List<Order> getAll() {
         log.info("Have been called the getAll method on the OrderService class");

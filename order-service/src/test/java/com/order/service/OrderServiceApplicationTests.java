@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.order.service.feignclients.DiscFeignClient;
+import com.order.service.kafka.KafkaSender;
+import com.order.service.model.DiscDTO;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,6 +31,10 @@ class OrderServiceApplicationTests {
 	private OrderRepository orderRepository;
 	@Mock
 	private SequenceGeneratorService sequenceGeneratorService;
+	@Mock
+	private KafkaSender kafkaSender;
+	@Mock
+	private DiscFeignClient discFeignClient;
 	
 	// There is created an instance of the service and injected the mocks declared before
 	@InjectMocks
@@ -39,7 +46,7 @@ class OrderServiceApplicationTests {
 	static void init() {
 		genreListMock = new ArrayList<>();
 		List<Detail> detailList = new ArrayList<>();
-		detailList.add(Detail.builder().id(1).orderId(1).discId(1).quantity(2).build());
+		detailList.add(Detail.builder().discId(1).quantity(2).build());
 		genreListMock.add(Order.builder().id(1).details(detailList).status(false).totalOrder(0).build());
 	}
 	
@@ -69,11 +76,15 @@ class OrderServiceApplicationTests {
 	public void shouldSaveOrder() {
 		// GIVEN
 		List<Detail> detailList = new ArrayList<>();
-		detailList.add(Detail.builder().id(1).orderId(1).discId(1).quantity(2).build());
+		detailList.add(Detail.builder().discId(1).quantity(2).build());
 		Order orderMock = Order.builder().id(2).details(detailList).status(false).totalOrder(0).build();
-		
+
+		DiscDTO discDTO = DiscDTO.builder().id(1).price(10).stock(5).build();
+
 		when(orderRepository.save(orderMock)).thenReturn(orderMock);
 		when(sequenceGeneratorService.generateSequence(Order.SEQUENCE_NAME)).thenReturn(2L);
+		when(discFeignClient.findById(1)).thenReturn(discDTO);
+
 		// WHEN
 		Order genre = orderService.save(orderMock);
 		// THEN

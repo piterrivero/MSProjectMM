@@ -9,5 +9,5 @@ import lombok.Setter;
 @Builder
 public class GenreDTO {
 
-	private String genre;
+    private String genre;
 }

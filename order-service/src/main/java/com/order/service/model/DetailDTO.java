@@ -1,4 +1,4 @@
-package com.payment.service.model;
+package com.order.service.model;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -8,8 +8,6 @@ import lombok.Setter;
 @Setter
 @Builder
 public class DetailDTO {
-
-    private long id;
 
     private int discId;
 

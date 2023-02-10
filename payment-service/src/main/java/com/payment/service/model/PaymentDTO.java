@@ -7,14 +7,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class DetailDTO {
+public class PaymentDTO {
 
     private long id;
 
-    private int discId;
+    private long idOrder;
 
-    private int quantity;
+    private long totalPayment;
 
-    private long totalDetail;
+    private boolean status;
+
+    private String statusMessage;
 
 }

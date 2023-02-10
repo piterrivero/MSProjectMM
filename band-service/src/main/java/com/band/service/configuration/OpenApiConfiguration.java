@@ -11,17 +11,17 @@ import io.swagger.v3.oas.models.info.License;
 @Configuration
 public class OpenApiConfiguration {
 
-  @Bean
-  public OpenAPI customOpenAPI() {
-    return new OpenAPI()
-        .components(new Components())
-        .info(new Info()
-            .title("Band Service API")
-            .description("Description of the Band Service API")
-            .termsOfService("terms")
-            .license(new License().name("GNU"))
-            .version("1.0")
-        );
-  }	
-	
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .components(new Components())
+                .info(new Info()
+                        .title("Band Service API")
+                        .description("Description of the Band Service API")
+                        .termsOfService("terms")
+                        .license(new License().name("GNU"))
+                        .version("1.0")
+                );
+    }
+
 }

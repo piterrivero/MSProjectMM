@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.payment.service.kafka.KafkaSender;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,6 +28,8 @@ class PaymentServiceApplicationTests {
 	private PaymentRepository paymentRepository;
 	@Mock
 	private SequenceGeneratorService sequenceGeneratorService;
+	@Mock
+	private KafkaSender kafkaSender;
 	
 	// There is created an instance of the service and injected the mocks declared before
 	@InjectMocks

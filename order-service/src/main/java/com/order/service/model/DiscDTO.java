@@ -1,12 +1,11 @@
 package com.order.service.model;
 
-import lombok.*;
-import org.springframework.data.annotation.Id;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
 public class DiscDTO {
 

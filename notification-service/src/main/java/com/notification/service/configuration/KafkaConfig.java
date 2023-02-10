@@ -1,11 +1,10 @@
 package com.notification.service.configuration;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.notification.service.kafka.MessageDeserializer;
+import com.notification.service.model.NotificationDTO;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,19 +12,20 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.notification.service.kafka.MessageDeserializer;
-import com.notification.service.model.NotificationDTO;
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 public class KafkaConfig {
 
-	@Value("${spring.kafka.bootstrap-servers}")
+    private final ObjectMapper objectMapper;
+    @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
-	@Autowired
-	private ObjectMapper objectMapper;
-	
+    public KafkaConfig(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
     @Bean
     public ConsumerFactory<String, NotificationDTO> notificationDTOConsumerFactory() {
         Map<String, Object> config = new HashMap<>();
@@ -41,5 +41,5 @@ public class KafkaConfig {
         factory.setConsumerFactory(notificationDTOConsumerFactory());
         return factory;
     }
-	
+
 }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.genre.service.kafka.KafkaSender;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,13 +32,18 @@ class GenreServiceApplicationTests {
 	// There is created an instance of the service and injected the mocks declared before
 	@InjectMocks
 	private GenreService genreService;
+	@Mock
+	private KafkaSender kafkaSender;
 
 	private static List<Genre> genreListMock;
 	
 	@BeforeAll
 	static void init() {
 		genreListMock = new ArrayList<>();
-		genreListMock.add(Genre.builder().id(1).genre("Heavy Metal").build());
+		Genre genre = new Genre();
+		genre.setId(1);
+		genre.setGenre("Heavy Metal");
+		genreListMock.add(genre);
 	}
 	
 	@Test
@@ -67,7 +73,8 @@ class GenreServiceApplicationTests {
 	@Test
 	public void shouldSaveGenre() {
 		// GIVEN
-		Genre genreMock = Genre.builder().genre("Trash Metal").build();
+		Genre genreMock = new Genre();
+		genreMock.setGenre("Trash Metal");
 		when(genreRepository.save(genreMock)).thenReturn(genreMock);
 		when(sequenceGeneratorService.generateSequence(Genre.SEQUENCE_NAME)).thenReturn(2L);
 		// WHEN
@@ -80,10 +87,14 @@ class GenreServiceApplicationTests {
 	@Test
 	public void shouldUpdateGenre() {
 		// GIVEN
-		Genre genreMock = Genre.builder().id(1).genre("Heavy Metal").build();
+		Genre genreMock = new Genre();
+		genreMock.setGenre("Heavy Metal");
 		Optional<Genre> genreMockOp = Optional.of(genreMock);
-		Genre updateGenre = Genre.builder().id(1).genre("Heavy Metal Mod").build();
-		
+
+		Genre updateGenre = new Genre();
+		updateGenre.setId(1);
+		updateGenre.setGenre("Heavy Metal Mod");
+
 		when(genreRepository.findById(1)).thenReturn(genreMockOp);
 		when(genreRepository.save(genreMock)).thenReturn(updateGenre);
 		
