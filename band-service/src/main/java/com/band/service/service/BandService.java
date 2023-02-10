@@ -53,8 +53,10 @@ public class BandService {
         log.info("Have been called the save method on the BandService class");
         band.setId(sequenceGenerator.generateSequence(Band.SEQUENCE_NAME));
 
-        String description = "The band " + band.getName() + " was saved successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The band " + band.getName() + " was saved successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return bandRepository.save(band);
     }
@@ -81,8 +83,10 @@ public class BandService {
         toUpdate.setCountry(band.getCountry());
         toUpdate.setName(band.getName());
 
-        String description = "The band " + toUpdate.getName() + " was updated successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The band " + toUpdate.getName() + " was updated successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return bandRepository.save(toUpdate);
     }
@@ -91,8 +95,10 @@ public class BandService {
         log.info("Have been called the delete method on the BandService class");
         Band toDelete = getBandById(id);
 
-        String description = "The band " + toDelete.getName() + " was deleted successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The band " + toDelete.getName() + " was deleted successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         bandRepository.deleteById(id);
     }

@@ -58,8 +58,10 @@ public class DiscService {
         log.info("Have been called the save method on the DiscService class");
         disc.setId(sequenceGenerator.generateSequence(Disc.SEQUENCE_NAME));
 
-        String description = "The disc " + disc.getTitle() + " was saved successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The disc " + disc.getTitle() + " was saved successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return discRepository.save(disc);
     }
@@ -80,8 +82,10 @@ public class DiscService {
         toUpdate.setTitle(disc.getTitle());
         toUpdate.setYear(disc.getYear());
 
-        String description = "The disc " + toUpdate.getTitle() + " was updated successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The disc " + toUpdate.getTitle() + " was updated successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return discRepository.save(toUpdate);
     }
@@ -90,8 +94,10 @@ public class DiscService {
         log.info("Have been called the delete method on the DiscService class");
         Disc toDelete = getDiscById(id);
 
-        String description = "The disc " + toDelete.getTitle() + " was deleted successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The disc " + toDelete.getTitle() + " was deleted successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         discRepository.deleteById(id);
     }

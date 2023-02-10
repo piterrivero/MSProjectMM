@@ -1,12 +1,11 @@
 package com.customer.service.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CustomerDTO {
 
     private long id;

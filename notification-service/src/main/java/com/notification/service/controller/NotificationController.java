@@ -1,6 +1,8 @@
 package com.notification.service.controller;
 
 import com.notification.service.entity.Notification;
+import com.notification.service.mapper.NotificationMapper;
+import com.notification.service.model.NotificationDTO;
 import com.notification.service.service.NotificationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -18,28 +20,31 @@ public class NotificationController {
 
     private final NotificationService notificationService;
 
-    public NotificationController(NotificationService notificationService) {
+    private final NotificationMapper notificationMapper;
+
+    public NotificationController(NotificationService notificationService, NotificationMapper notificationMapper) {
         this.notificationService = notificationService;
+        this.notificationMapper = notificationMapper;
     }
 
     @GetMapping
-    public ResponseEntity<List<Notification>> listNotification() {
+    public ResponseEntity<List<NotificationDTO>> listNotification() {
         log.info("Have been called the listNotification method on the class NotificationController");
         List<Notification> notification = notificationService.getAll();
         if (notification.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(notification);
+        return ResponseEntity.ok(notificationMapper.modelsToDto(notification));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Notification> getNotification(@PathVariable("id") int id) {
+    public ResponseEntity<NotificationDTO> getNotification(@PathVariable("id") int id) {
         log.info("Have been called the getNotification method on the class NotificationController");
         Notification notification = notificationService.getOrderById(id);
         if (notification == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(notification);
+        return ResponseEntity.ok(notificationMapper.modelToDto(notification));
     }
 
 }

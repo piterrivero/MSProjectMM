@@ -41,7 +41,12 @@ class CustomerServiceApplicationTests {
 	@BeforeAll
 	static void init() {
 		customerListMock = new ArrayList<>();
-		customerListMock.add(Customer.builder().id(1).name("Pedro").surname("Perez").budget(100).build());
+		Customer customer = new Customer();
+		customer.setId(1);
+		customer.setName("Pedro");
+		customer.setSurname("Perez");
+		customer.setBudget(100);
+		customerListMock.add(customer);
 	}
 
 	@Test
@@ -71,7 +76,11 @@ class CustomerServiceApplicationTests {
 	@Test
 	public void shouldSaveCustomer() {
 		// GIVEN
-		Customer customerMock = Customer.builder().name("Maria").surname("Rodriguez").budget(50).build();
+		Customer customerMock = new Customer();
+		customerMock.setId(1);
+		customerMock.setName("Maria");
+		customerMock.setSurname("Rodriguez");
+		customerMock.setBudget(50);
 		when(customerRepository.save(customerMock)).thenReturn(customerMock);
 		when(sequenceGeneratorService.generateSequence(Customer.SEQUENCE_NAME)).thenReturn(2L);
 		// WHEN
@@ -84,9 +93,17 @@ class CustomerServiceApplicationTests {
 	@Test
 	public void shouldUpdateCustomer() {
 		// GIVEN
-		Customer customerMock = Customer.builder().name("Maria").surname("Rodriguez").budget(50).build();
+		Customer customerMock = new Customer();
+		customerMock.setName("Maria");
+		customerMock.setSurname("Rodriguez");
+		customerMock.setBudget(50);
+
 		Optional<Customer> customerMockOp = Optional.of(customerMock);
-		Customer updateCustomer = Customer.builder().name("Maria Mod").surname("Rodriguez").budget(50).build();
+
+		Customer updateCustomer = new Customer();
+		updateCustomer.setName("Maria Mod");
+		updateCustomer.setSurname("Rodriguez");
+		updateCustomer.setBudget(50);
 
 		when(customerRepository.findById(1)).thenReturn(customerMockOp);
 		when(customerRepository.save(customerMock)).thenReturn(updateCustomer);

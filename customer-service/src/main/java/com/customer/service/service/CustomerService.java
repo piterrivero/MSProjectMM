@@ -43,8 +43,10 @@ public class CustomerService {
         log.info("Have been called the save method on the CustomerService class");
         customer.setId(sequenceGenerator.generateSequence(Customer.SEQUENCE_NAME));
 
-        String description = "The customer " + customer.getName() + " " + customer.getSurname() + " was saved successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The customer " + customer.getName() + " " + customer.getSurname() + " was saved successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return customerRepository.save(customer);
     }
@@ -56,8 +58,10 @@ public class CustomerService {
         toUpdate.setSurname(customer.getSurname());
         toUpdate.setBudget(customer.getBudget());
 
-        String description = "The customer " + toUpdate.getName() + " " + toUpdate.getSurname() + " was updated successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The customer " + toUpdate.getName() + " " + toUpdate.getSurname() + " was updated successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return customerRepository.save(toUpdate);
     }
@@ -66,8 +70,10 @@ public class CustomerService {
         log.info("Have been called the delete method on the CustomerService class");
         Customer toDelete = getCustomerById(id);
 
-        String description = "The customer " + toDelete.getName() + " " + toDelete.getSurname() + " was deleted successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The customer " + toDelete.getName() + " " + toDelete.getSurname() + " was deleted successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         customerRepository.deleteById(id);
     }

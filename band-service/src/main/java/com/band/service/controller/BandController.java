@@ -1,6 +1,8 @@
 package com.band.service.controller;
 
 import com.band.service.entity.Band;
+import com.band.service.mapper.BandMapper;
+import com.band.service.model.BandDTO;
 import com.band.service.model.DiscDTO;
 import com.band.service.model.GenreDTO;
 import com.band.service.service.BandService;
@@ -20,35 +22,38 @@ public class BandController {
 
     private final BandService bandService;
 
-    public BandController(BandService bandService) {
+    private final BandMapper bandMapper;
+
+    public BandController(BandService bandService, BandMapper bandMapper) {
         this.bandService = bandService;
+        this.bandMapper = bandMapper;
     }
 
     @GetMapping
-    public ResponseEntity<List<Band>> listBands() {
+    public ResponseEntity<List<BandDTO>> listBands() {
         log.info("Have been called the listBands method on the BandController class");
         List<Band> bands = bandService.getAll();
         if (bands.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(bands);
+        return ResponseEntity.ok(bandMapper.modelsToDto(bands));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Band> getBand(@PathVariable("id") int id) {
+    public ResponseEntity<BandDTO> getBand(@PathVariable("id") int id) {
         log.info("Have been called the getBand method on the BandController class");
         Band band = bandService.getBandById(id);
         if (band == null) {
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(band);
+        return ResponseEntity.ok(bandMapper.modelToDto(band));
     }
 
     @PostMapping
-    public ResponseEntity<Band> saveBand(@RequestBody Band band) {
+    public ResponseEntity<BandDTO> saveBand(@RequestBody BandDTO band) {
         log.info("Have been called the saveBand method on the BandController class");
-        Band newBand = bandService.save(band);
-        return ResponseEntity.ok(newBand);
+        Band newBand = bandService.save(bandMapper.dtoToModel(band));
+        return ResponseEntity.ok(bandMapper.modelToDto(newBand));
     }
 
     // Communicating with other micro services
@@ -97,13 +102,13 @@ public class BandController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Band> updateBand(@PathVariable("id") int id, @RequestBody Band band) {
+    public ResponseEntity<BandDTO> updateBand(@PathVariable("id") int id, @RequestBody BandDTO band) {
         log.info("Have been called the updateBand method on the BandController class");
         if (band == null) {
             return ResponseEntity.notFound().build();
         }
-        Band newBand = bandService.update(id, band);
-        return ResponseEntity.ok(newBand);
+        Band newBand = bandService.update(id, bandMapper.dtoToModel(band));
+        return ResponseEntity.ok(bandMapper.modelToDto(newBand));
     }
 
     @DeleteMapping("/{id}")

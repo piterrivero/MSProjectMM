@@ -1,8 +1,6 @@
 package com.disc.service.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,7 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "disc")
 @Getter
 @Setter
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Disc {
 
     @Transient

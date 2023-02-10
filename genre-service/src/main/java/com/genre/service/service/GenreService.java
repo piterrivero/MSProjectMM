@@ -43,8 +43,10 @@ public class GenreService {
         log.info("Have been called the save method on the GenreService class");
         genre.setId(sequenceGenerator.generateSequence(Genre.SEQUENCE_NAME));
 
-        String description = "The genre " + genre.getGenre() + " was saved successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The genre " + genre.getGenre() + " was saved successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return genreRepository.save(genre);
     }
@@ -54,8 +56,10 @@ public class GenreService {
         Genre toUpdate = getGenreById(id);
         toUpdate.setGenre(genre.getGenre());
 
-        String description = "The genre " + toUpdate.getGenre() + " was updated successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The genre " + toUpdate.getGenre() + " was updated successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         return genreRepository.save(toUpdate);
     }
@@ -64,8 +68,10 @@ public class GenreService {
         log.info("Have been called the delete method on the GenreService class");
         Genre toDelete = getGenreById(id);
 
-        String description = "The genre " + toDelete.getGenre() + " was deleted successfully";
-        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, NotificationDTO.builder().description(description).notificationDate(LocalDateTime.now()).build());
+        NotificationDTO notificationDTO = new NotificationDTO();
+        notificationDTO.setDescription("The genre " + toDelete.getGenre() + " was deleted successfully");
+        notificationDTO.setNotificationDate(LocalDateTime.now());
+        kafkaSender.sendMessage(KafkaTopicConfig.PROCESS_NOTIFICATION_TOPIC, notificationDTO);
 
         genreRepository.deleteById(id);
     }

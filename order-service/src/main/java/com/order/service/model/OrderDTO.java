@@ -1,15 +1,14 @@
 package com.order.service.model;
 
 import com.order.service.entity.Detail;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
-@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderDTO {
 
     private long id;
