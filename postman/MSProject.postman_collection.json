@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idGenre\" : \"13\",\r\n    \"name\" : \"Banda de test\",\r\n    \"country\" : \"Venezuela\"\r\n}",
+							"raw": "{\r\n    \"idGenre\" : \"4\",\r\n    \"name\" : \"Soulfly\",\r\n    \"country\" : \"Brazil\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -371,7 +371,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"genre\" : \"Pop\"\r\n}",
+							"raw": "{\r\n    \"genre\" : \"Test 2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -427,7 +427,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/genre/23",
+							"raw": "http://localhost:8080/genre/30",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -435,7 +435,7 @@
 							"port": "8080",
 							"path": [
 								"genre",
-								"23"
+								"30"
 							]
 						}
 					},
@@ -640,6 +640,140 @@
 							"path": [
 								"notification",
 								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"details\" : [\r\n        {\r\n           \"discId\" : \"1\",\r\n           \"quantity\" : \"3\"\r\n        },\r\n        {\r\n           \"discId\" : \"2\",\r\n           \"quantity\" : \"2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock",
+			"item": [
+				{
+					"name": "Get All Stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to stock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"1\",\r\n    \"discId\" : \"1\",\r\n    \"stock\" : \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/stock/addToStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"stock",
+								"addToStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove from stock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discId\" : \"1\",\r\n    \"stock\" : \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/stock/addToStock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"stock",
+								"addToStock"
 							]
 						}
 					},

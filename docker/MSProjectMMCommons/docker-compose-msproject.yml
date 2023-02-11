@@ -84,6 +84,30 @@ services:
     networks:
       - msproject
 
+  mongodb-stock:
+    container_name: mongodb-stock
+    image: bitnami/mongodb:4.0.27
+    volumes:
+      - mongodb-stock-data:/bitnami/mongodb/data
+      - ../../mongodb/mongodump:/mongodump
+    ports:
+      - "27008:27017"
+    restart: on-failure:10
+    networks:
+      - msproject
+
+  mongodb-return:
+    container_name: mongodb-return
+    image: bitnami/mongodb:4.0.27
+    volumes:
+      - mongodb-return-data:/bitnami/mongodb/data
+      - ../../mongodb/mongodump:/mongodump
+    ports:
+      - "27009:27017"
+    restart: on-failure:10
+    networks:
+      - msproject
+
   zipkin:
     container_name: zipkin
     image: openzipkin/zipkin
@@ -200,6 +224,8 @@ volumes:
   mongodb-order-data:
   mongodb-payment-data:
   mongodb-notification-data:
+  mongodb-stock-data:
+  mongodb-return-data:
   elasticsearch_data:
       driver: local
   
