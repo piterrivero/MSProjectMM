@@ -20,4 +20,6 @@ public class OrderDTO {
 
     private String statusMessage;
 
+    private long customerId;
+
 }

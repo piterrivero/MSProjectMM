@@ -1,20 +1,21 @@
-package com.order.service.feignclients;
+package com.payment.service.feignclients;
 
-import com.order.service.model.DiscDTO;
+
+import com.payment.service.model.CustomerDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name = "disc-service")
-@RequestMapping("/disc")
-public interface DiscFeignClient {
+@FeignClient(name = "customer-service")
+@RequestMapping("/customer")
+public interface CustomerFeignClient {
 
     @GetMapping("/{id}")
-    public DiscDTO findById(@PathVariable("id") long id);
+    CustomerDTO getCustomer(@PathVariable("id") long id);
 
     @PutMapping("/{id}")
-    public DiscDTO updateDisc(@PathVariable("id") long id, DiscDTO disc);
+    CustomerDTO updateCustomer(@PathVariable("id") long id, CustomerDTO customerDTO);
 
 }

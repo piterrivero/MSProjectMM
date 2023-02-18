@@ -28,4 +28,6 @@ public class Order {
 
     private String statusMessage;
 
+    private long customerId;
+
 }
