@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0016-1" author="piter">
+        <comment>Inserting payment</comment>
+        <insert tableName="payment">
+            <column name="id" value="aa7663cd-9364-46c8-83ad-7391a441a2bf"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b24"/>
+            <column name="total_payment" value="39"/>
+            <column name="status" value="true"/>
+            <column name="status_message" value="Successfully"/>
+        </insert>
+        <insert tableName="payment">
+            <column name="id" value="ee7663cd-9364-46c8-83ad-7391a441a2bf"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b77"/>
+            <column name="total_payment" value="16"/>
+            <column name="status" value="false"/>
+            <column name="status_message" value="Failed"/>
+        </insert>
+        <insert tableName="payment">
+            <column name="id" value="ae7663cd-9364-46c8-83ad-7391a441a2bf"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b88"/>
+            <column name="total_payment" value="45"/>
+            <column name="status" value="true"/>
+            <column name="status_message" value="Successfully"/>
+        </insert>
+        <insert tableName="payment">
+            <column name="id" value="ef7663cd-9364-46c8-83ad-7391a441a2bf"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b99"/>
+            <column name="total_payment" value="75"/>
+            <column name="status" value="false"/>
+            <column name="status_message" value="Failed"/>
+        </insert>
+        <insert tableName="payment">
+            <column name="id" value="ff7663cd-9364-46c8-83ad-7391a441a2bf"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b12"/>
+            <column name="total_payment" value="127"/>
+            <column name="status" value="true"/>
+            <column name="status_message" value="Successfully"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0013-1" author="piter">
+        <comment>Inserting customer</comment>
+        <insert tableName="customer">
+            <column name="id" value="607e51e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="name" value="Gianluca"/>
+            <column name="surname" value="Rivero"/>
+            <column name="budget" valueNumeric="100"/>
+        </insert>
+        <insert tableName="customer">
+            <column name="id" value="607e51e4-8079-4df0-a86e-b445641f70a8"/>
+            <column name="name" value="Adriana"/>
+            <column name="surname" value="Espinoza"/>
+            <column name="budget" valueNumeric="150"/>
+        </insert>
+        <insert tableName="customer">
+            <column name="id" value="607e51e4-8079-4df0-a86e-b889761f70a8"/>
+            <column name="name" value="Maria"/>
+            <column name="surname" value="Tuzzo"/>
+            <column name="budget" valueNumeric="80"/>
+        </insert>
+        <insert tableName="customer">
+            <column name="id" value="607e51e4-8079-4df0-a86e-b856654f70a8"/>
+            <column name="name" value="Piter"/>
+            <column name="surname" value="Rivero"/>
+            <column name="budget" valueNumeric="60"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

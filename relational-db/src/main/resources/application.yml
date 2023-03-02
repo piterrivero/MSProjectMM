@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+        ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5432/msproject
+    username: local
+    password: local
+  liquibase:
+    change-log: classpath:db/changelog/liquibase-changelog.yml
+    enabled: true

@@ -1,0 +1,51 @@
+There is the project Pattern Design where it can be found examples of the mainly used design patterns
+
+Creational Design Pattern
+
+- Abstract Factory: It allows us to create objects without specifying their concrete type
+- Builder: It is used to create the complex objects
+
+Structural Design Patterns
+
+- Bridge: It decouples an abstraction so that two classes can vary independently
+
+    It is like a way to communicate an type of object (abstraction) with other type (implementation) without modificate any of them.
+    In the example we have the class Ferrari and Bugatti that extends of Vehicle (our bridget) this one make the union
+    with the classes RedColor and BlackColor through their interface Color. This pattern consent to have the different
+    permutation without have more classes... we have only bugatti, ferrari, hummer, toyota, red and black (6 classes)...
+    without this pattern to have the same possibilities we have to have the classes FerrariBlack, FerrariRed,
+    BugattiBlack, BugattiRed, ToyotaBlack, ToyotaRed, HummerBlack, HummerRed (8 classes) and their can grow exponentially
+    if the types of car or the type of vehicles grow. For example if we want to add another color like green, we will have
+    only an additional class "green" and in this way we will have 7 classes, without the pattern to add another color we have
+    to have the classes ferrariGreen, bugattiGreen, toyotaGreen and HummerGreen so 4 additional classes for un total of twelve
+    against the 7 with the pattern.
+
+- Adapter: It provides us for two incompatible classes to work together by wrapping an interface around one of the existing classes.
+
+    In all the parts on one system there is called the interface A, there is a lot of implementation but
+    all of them return a type "A". But for some reason there is a new interface B with its implementation
+    that it is needed to put to work with compatibility with the interface A. In other words, we need the implementation
+    of B to return a type "A" in order that it can be compatible with the caller on all the part of the system.
+    For this it is used an adapter.
+
+    Adapter is a class that return a type "A" because implements the interface of A and implements all of the A methods.
+    The adapter too receive in the constructor an object of type type "B". The adapter uses the methods of B in order
+    to manipulate the information end return the methods of A.
+
+- Decorator: It extends the object behavior dynamically at the run time.
+
+    It is a way to add functionality to an object without modify the original code. On the example we can se that we have a class
+    nationalDisc and ImportedDisc each one with a little different message. We have to a class DiscBox which intention is to add
+    an special box to the disc and so the price is incremented. We can noticed that if we use the DiscBox passing the nationalDisc
+    object we can have the exactly same message of the national discs but additionally a piece of message referring to the Box classes
+    and the price incremented the same happen if we create the object DiscBox passing an importedDisc Object. So With the decorator BOX
+    we can add functionality to National or Imported without the need to create for example a class NationalDiscBox and ImportedDiscBox
+    in order to have the same result without using decorators.
+
+- Proxy: It reduces the cost, reduce complexity, and provide the placeholder interface to an underlying object to control access.
+
+Behavior Design Pattern
+
+- Observer: It allows a number of observer objects to see an event.
+
+- Strategy: It provides one of the families of algorithm to be selected at the runtime.

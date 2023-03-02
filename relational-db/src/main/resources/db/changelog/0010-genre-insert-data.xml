@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0010-1" author="piter">
+        <comment>Inserting genre</comment>
+        <insert tableName="genre">
+            <column name="id" value="607e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="genre" value="Heavy Metal"/>
+        </insert>
+        <insert tableName="genre">
+            <column name="id" value="29599445-fb35-4ac7-b592-05fb82b94038"/>
+            <column name="genre" value="Death Metal"/>
+        </insert>
+        <insert tableName="genre">
+            <column name="id" value="f7190629-da26-4b7a-b841-de2f27fd958c"/>
+            <column name="genre" value="Punk"/>
+        </insert>
+        <insert tableName="genre">
+            <column name="id" value="d22d6586-7fc9-45c8-95d2-1548f0008faf"/>
+            <column name="genre" value="Ska"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

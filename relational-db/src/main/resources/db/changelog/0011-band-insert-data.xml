@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0011-1" author="piter">
+        <comment>Inserting band</comment>
+        <insert tableName="band">
+            <column name="id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="genre_id" value="607e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="name" value="Iron Maiden"/>
+            <column name="country" value="UK"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
+            <column name="genre_id" value="607e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="name" value="Ozzy Osbourne"/>
+            <column name="country" value="UK"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="d2407cf9-1856-4efe-bad5-79819f40f094"/>
+            <column name="genre_id" value="607e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="name" value="Judas Priest"/>
+            <column name="country" value="UK"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="cfe5b87f-4e08-4725-9395-3dc1754a7f16"/>
+            <column name="genre_id" value="29599445-fb35-4ac7-b592-05fb82b94038"/>
+            <column name="name" value="Cannibal Corpse"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="5a280752-ef77-43c6-a50a-e6d903114013"/>
+            <column name="genre_id" value="f7190629-da26-4b7a-b841-de2f27fd958c"/>
+            <column name="name" value="Rancid"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-8976-4f0b-827b-bdd66a902dfc"/>
+            <column name="genre_id" value="d22d6586-7fc9-45c8-95d2-1548f0008faf"/>
+            <column name="name" value="Desorden Publico"/>
+            <column name="country" value="Venezuela"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

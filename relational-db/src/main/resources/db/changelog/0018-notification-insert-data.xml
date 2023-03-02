@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0018-1" author="piter">
+        <comment>Inserting notification</comment>
+        <insert tableName="notification">
+            <column name="id" value="607e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="description" value="Notification 1"/>
+            <column name="notification_date" value="2023-02-03T11:25:30.00Z"/>
+        </insert>
+        <insert tableName="notification">
+            <column name="id" value="555e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="description" value="Notification 2"/>
+            <column name="notification_date" value="2023-02-01T11:25:30.00Z"/>
+        </insert>
+        <insert tableName="notification">
+            <column name="id" value="777e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="description" value="Notification 3"/>
+            <column name="notification_date" value="2023-02-05T11:25:30.00Z"/>
+        </insert>
+        <insert tableName="notification">
+            <column name="id" value="888e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="description" value="Notification 4"/>
+            <column name="notification_date" value="2022-12-03T11:25:30.00Z"/>
+        </insert>
+        <insert tableName="notification">
+            <column name="id" value="999e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="description" value="Notification 5"/>
+            <column name="notification_date" value="2022-12-23T11:25:30.00Z"/>
+        </insert>
+        <insert tableName="notification">
+            <column name="id" value="111e51e4-8079-4df0-a86e-b852041f70a8"/>
+            <column name="description" value="Notification 6"/>
+            <column name="notification_date" value="2022-11-15T11:25:30.00Z"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

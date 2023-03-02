@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0015-1" author="piter">
+        <comment>Inserting order details</comment>
+        <insert tableName="order_details">
+            <column name="id" value="899e51e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b24"/>
+            <column name="disc_id" value="1ecf175d-2a04-4e82-88ad-33c13a0e80bd"/>
+            <column name="quantity" valueNumeric="2"/>
+            <column name="total_detail" valueNumeric="24"/>
+        </insert>
+        <insert tableName="order_details">
+            <column name="id" value="090e51e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b24"/>
+            <column name="disc_id" value="a1ce0d6f-b9f0-4a23-9afb-89ff2508f4a4"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="total_detail" valueNumeric="15"/>
+        </insert>
+        <insert tableName="order_details">
+            <column name="id" value="433151e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b77"/>
+            <column name="disc_id" value="d3de610b-3f0e-4acc-ab32-3a95524c8cb2"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="total_detail" valueNumeric="16"/>
+        </insert>
+        <insert tableName="order_details">
+            <column name="id" value="888851e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b88"/>
+            <column name="disc_id" value="a1ce0d6f-b9f0-4a23-9afb-89ff2508f4a4"/>
+            <column name="quantity" valueNumeric="3"/>
+            <column name="total_detail" valueNumeric="45"/>
+        </insert>
+        <insert tableName="order_details">
+            <column name="id" value="867851e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b99"/>
+            <column name="disc_id" value="dd689910-221f-4364-bb9b-248c3a050137"/>
+            <column name="quantity" valueNumeric="3"/>
+            <column name="total_detail" valueNumeric="75"/>
+        </insert>
+        <insert tableName="order_details">
+            <column name="id" value="444851e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b12"/>
+            <column name="disc_id" value="5e86c86a-4fd9-41e9-befe-cf58e10af129"/>
+            <column name="quantity" valueNumeric="2"/>
+            <column name="total_detail" valueNumeric="60"/>
+        </insert>
+        <insert tableName="order_details">
+            <column name="id" value="222851e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b12"/>
+            <column name="disc_id" value="d3de610b-3f0e-4acc-ab32-3a95524c8cb2"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="total_detail" valueNumeric="16"/>
+        </insert>
+        <insert tableName="order_details">
+            <column name="id" value="111851e4-8079-4df0-a86e-b099841f70a8"/>
+            <column name="order_id" value="1e90bd9e-d193-4ba2-9714-92bf9c682b12"/>
+            <column name="disc_id" value="40631e3c-12c5-472f-9dc8-56b22240a513"/>
+            <column name="quantity" valueNumeric="3"/>
+            <column name="total_detail" valueNumeric="51"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0012-1" author="piter">
+        <comment>Inserting disc</comment>
+        <insert tableName="disc">
+            <column name="id" value="317b06e5-db94-4e91-b81b-e63f79467fe3"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="Fear of the dark"/>
+            <column name="year" value="1992"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="5e86c86a-4fd9-41e9-befe-cf58e10af129"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="Senjutsu"/>
+            <column name="year" value="2021"/>
+            <column name="price" valueNumeric="30"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="a1ce0d6f-b9f0-4a23-9afb-89ff2508f4a4"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="Powerslave"/>
+            <column name="year" value="1984"/>
+            <column name="price" valueNumeric="15"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="d3de610b-3f0e-4acc-ab32-3a95524c8cb2"/>
+            <column name="band_id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
+            <column name="title" value="Blizzard of Ozz"/>
+            <column name="year" value="1980"/>
+            <column name="price" valueNumeric="16"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="dd689910-221f-4364-bb9b-248c3a050137"/>
+            <column name="band_id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
+            <column name="title" value="Ordinary Man"/>
+            <column name="year" value="2020"/>
+            <column name="price" valueNumeric="25"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="00f23f11-5fb8-402d-8bdf-b5e99d6cf421"/>
+            <column name="band_id" value="d2407cf9-1856-4efe-bad5-79819f40f094"/>
+            <column name="title" value="Painkiller"/>
+            <column name="year" value="1990"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="f2d6d4c3-abac-4f9b-b68d-d61d232376bb"/>
+            <column name="band_id" value="d2407cf9-1856-4efe-bad5-79819f40f094"/>
+            <column name="title" value="Screaming for Vengeance"/>
+            <column name="year" value="1982"/>
+            <column name="price" valueNumeric="15"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="aa5ba55b-de37-4053-9df2-1206eadc3634"/>
+            <column name="band_id" value="cfe5b87f-4e08-4725-9395-3dc1754a7f16"/>
+            <column name="title" value="Tomb of the Mutilated"/>
+            <column name="year" value="1992"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="a40ef52d-d000-471b-a392-bff33e20790b"/>
+            <column name="band_id" value="cfe5b87f-4e08-4725-9395-3dc1754a7f16"/>
+            <column name="title" value="The Wretched Spawn"/>
+            <column name="year" value="2004"/>
+            <column name="price" valueNumeric="18"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="1ecf175d-2a04-4e82-88ad-33c13a0e80bd"/>
+            <column name="band_id" value="5a280752-ef77-43c6-a50a-e6d903114013"/>
+            <column name="title" value="Trouble Maker"/>
+            <column name="year" value="2017"/>
+            <column name="price" valueNumeric="12"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="40631e3c-12c5-472f-9dc8-56b22240a513"/>
+            <column name="band_id" value="b24379ea-8976-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Canto popular de la vida y muerte"/>
+            <column name="year" value="1994"/>
+            <column name="price" valueNumeric="17"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="007-1" author="piter">
+        <createTable tableName="payment"
+                     remarks="A table to contain all the payments">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="order_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_payment" type="real">
+                <constraints nullable="false" />
+            </column>
+            <column name="status" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="status_message" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="payment" baseColumnNames="order_id"
+                                 constraintName="payment_order_fk"
+                                 referencedTableName="order" referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

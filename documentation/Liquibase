@@ -1,0 +1,5 @@
+To drop all the DB you have to create a maven RUN with:
+
+liquibase:dropAll -N -f pom.xml
+
+When you run that maven there are deleted all the DB created with liquibase

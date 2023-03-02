@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="006-1" author="piter">
+        <createTable tableName="order_details"
+                     remarks="A table to contain all order details">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="order_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="disc_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quantity" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="total_detail" type="real">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="order_details" baseColumnNames="order_id"
+                                 constraintName="order_details_order_fk"
+                                 referencedTableName="order" referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="order_details" baseColumnNames="disc_id"
+                                 constraintName="order_details_disc_fk"
+                                 referencedTableName="disc" referencedColumnNames="id"/>
+
+    </changeSet>
+</databaseChangeLog>

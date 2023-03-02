@@ -108,6 +108,25 @@ services:
     networks:
       - msproject
 
+  postgresdb:
+    container_name: postgresdb
+    image: postgres:14.6
+    environment:
+      POSTGRES_USER: local
+      POSTGRES_PASSWORD: local
+      POSTGRES_DB: msproject
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdb-data:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    restart: unless-stopped
+    networks:
+      - msproject
+
   zipkin:
     container_name: zipkin
     image: openzipkin/zipkin
@@ -226,6 +245,7 @@ volumes:
   mongodb-notification-data:
   mongodb-stock-data:
   mongodb-return-data:
+  postgresdb-data:
   elasticsearch_data:
       driver: local
   

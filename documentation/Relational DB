@@ -1,0 +1,61 @@
+There is the project relational-db where it can be noticed the used and configuration of:
+
+- Liquid Base
+- JPA (Queries, Criteria ecc)
+
+Entities:
+
+band
+    id UUID
+    genre_id UUID
+    name string
+    country string
+
+disc
+    id UUID
+    band_id UUID
+    title string
+    year string
+    price long
+
+genre
+    id UUID
+    genre string
+
+customer
+    id UUID
+    name string
+    surname string
+    budget long
+
+order
+    id UUID
+    total_order long
+    status boolean
+    status_message string
+    customer_id UUID
+
+order_detail
+    id UUID
+    order_id UUID
+    disc_id UUID
+    quantity int
+    total_detail long
+
+payment
+    id UUID
+    order_id UUID
+    total_payment long
+    status boolean
+    status_message string
+
+stock
+    id UUID
+    disc_id UUID
+    stock int
+
+notification
+    id UUID
+    description string
+    notification_date instant
+
