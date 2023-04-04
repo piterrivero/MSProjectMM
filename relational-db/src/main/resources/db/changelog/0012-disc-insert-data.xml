@@ -30,6 +30,48 @@
             <column name="price" valueNumeric="15"/>
         </insert>
         <insert tableName="disc">
+            <column name="id" value="a1ce0d6f-b9f0-4a23-9afb-55ff2508f4a4"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="The Number of the Beast"/>
+            <column name="year" value="1982"/>
+            <column name="price" valueNumeric="15"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="a1ce0d6f-b9f0-4a23-9afb-77ff2508f4a4"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="Dance of Death"/>
+            <column name="year" value="2003"/>
+            <column name="price" valueNumeric="15"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="a1ce0d6f-b9f0-5a55-5afb-55ff2508f4a4"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="Seventh Son of a Seventh Son"/>
+            <column name="year" value="1988"/>
+            <column name="price" valueNumeric="25"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="a1ce0d6f-b9f0-4a23-9afb-89ff2888f4a4"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="A Matter of Life and Death"/>
+            <column name="year" value="2006"/>
+            <column name="price" valueNumeric="21"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="a1ce0d6f-b9f0-4a23-9afb-89ff9999f4a4"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="Brave New World"/>
+            <column name="year" value="2000"/>
+            <column name="price" valueNumeric="23"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="a1ce0d6f-b9f0-5a55-9afb-89ff9999f4a4"/>
+            <column name="band_id" value="8138aa28-de9a-4b45-b05e-39517b27c8b8"/>
+            <column name="title" value="Rock in Rio"/>
+            <column name="year" value="2002"/>
+            <column name="price" valueNumeric="40"/>
+        </insert>
+        <insert tableName="disc">
             <column name="id" value="d3de610b-3f0e-4acc-ab32-3a95524c8cb2"/>
             <column name="band_id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
             <column name="title" value="Blizzard of Ozz"/>
@@ -42,6 +84,34 @@
             <column name="title" value="Ordinary Man"/>
             <column name="year" value="2020"/>
             <column name="price" valueNumeric="25"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="dd689111-221f-4364-bb9b-248c3a050137"/>
+            <column name="band_id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
+            <column name="title" value="No More Tears"/>
+            <column name="year" value="1991"/>
+            <column name="price" valueNumeric="23"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="dd689222-221f-4364-bb9b-248c3a050137"/>
+            <column name="band_id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
+            <column name="title" value="Speak of the Devil"/>
+            <column name="year" value="1982"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="dd689444-221f-4364-bb9b-248c3a050137"/>
+            <column name="band_id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
+            <column name="title" value="Ozzmosis"/>
+            <column name="year" value="1995"/>
+            <column name="price" valueNumeric="16"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="dd689555-221f-4364-bb9b-248c3a050137"/>
+            <column name="band_id" value="835175f2-421e-42cf-a0c6-3c6b59871bff"/>
+            <column name="title" value="Live and Loud"/>
+            <column name="year" value="1993"/>
+            <column name="price" valueNumeric="45"/>
         </insert>
         <insert tableName="disc">
             <column name="id" value="00f23f11-5fb8-402d-8bdf-b5e99d6cf421"/>
@@ -65,6 +135,20 @@
             <column name="price" valueNumeric="20"/>
         </insert>
         <insert tableName="disc">
+            <column name="id" value="aa5ba55b-de77-4053-9df2-1206eadc3634"/>
+            <column name="band_id" value="cfe5b87f-4e08-4725-9395-3dc1754a7f16"/>
+            <column name="title" value="Vile"/>
+            <column name="year" value="1996"/>
+            <column name="price" valueNumeric="13"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="aa5ba55b-de77-4053-9df2-6606eadc3634"/>
+            <column name="band_id" value="cfe5b87f-4e08-4725-9395-3dc1754a7f16"/>
+            <column name="title" value="Torture"/>
+            <column name="year" value="2012"/>
+            <column name="price" valueNumeric="14"/>
+        </insert>
+        <insert tableName="disc">
             <column name="id" value="a40ef52d-d000-471b-a392-bff33e20790b"/>
             <column name="band_id" value="cfe5b87f-4e08-4725-9395-3dc1754a7f16"/>
             <column name="title" value="The Wretched Spawn"/>
@@ -79,11 +163,305 @@
             <column name="price" valueNumeric="12"/>
         </insert>
         <insert tableName="disc">
+            <column name="id" value="1ecf175d-2a04-4e82-88ad-33c13a0e77bd"/>
+            <column name="band_id" value="5a280752-ef77-43c6-a50a-e6d903114013"/>
+            <column name="title" value="Indestructible"/>
+            <column name="year" value="2003"/>
+            <column name="price" valueNumeric="11"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="1ecf175d-2a04-4e82-88ad-33c13a0e78bd"/>
+            <column name="band_id" value="5a280752-ef77-43c6-a50a-e6d903114013"/>
+            <column name="title" value="Life Won't Wait"/>
+            <column name="year" value="1998"/>
+            <column name="price" valueNumeric="14"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="1ecf175d-2a04-4e55-55ad-55c13a0e78bd"/>
+            <column name="band_id" value="5a660752-ef77-43c6-a50a-e6d903114013"/>
+            <column name="title" value="Punk in Drublic"/>
+            <column name="year" value="1994"/>
+            <column name="price" valueNumeric="15"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="1ecf175d-2a04-4e55-55ad-61c13a0e78bd"/>
+            <column name="band_id" value="5a660752-ef77-43c6-a50a-e6d903114013"/>
+            <column name="title" value="Pump Up the Valuum"/>
+            <column name="year" value="2000"/>
+            <column name="price" valueNumeric="18"/>
+        </insert>
+        <insert tableName="disc">
             <column name="id" value="40631e3c-12c5-472f-9dc8-56b22240a513"/>
             <column name="band_id" value="b24379ea-8976-4f0b-827b-bdd66a902dfc"/>
             <column name="title" value="Canto popular de la vida y muerte"/>
             <column name="year" value="1994"/>
             <column name="price" valueNumeric="17"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="20631e3c-12c5-472f-9dc8-56b22240a513"/>
+            <column name="band_id" value="b24379ea-8976-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Plomo revienta"/>
+            <column name="year" value="1997"/>
+            <column name="price" valueNumeric="18"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="44631e3c-12c5-472f-9dc8-56b22240a513"/>
+            <column name="band_id" value="b24379ea-8976-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Los Contrarios"/>
+            <column name="year" value="2011"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="44631e3c-12c5-472f-9dc8-56b22240a000"/>
+            <column name="band_id" value="b24379ea-2222-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Lo Mato"/>
+            <column name="year" value="1973"/>
+            <column name="price" valueNumeric="10"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="66631e3c-12c5-472f-9dc8-56b22240a000"/>
+            <column name="band_id" value="b24379ea-2222-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="La Voz"/>
+            <column name="year" value="1975"/>
+            <column name="price" valueNumeric="12"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="66631e3c-12c5-472f-9dc8-66b22240a000"/>
+            <column name="band_id" value="b24379ea-2222-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Cosa Nuestra"/>
+            <column name="year" value="1969"/>
+            <column name="price" valueNumeric="14"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="66631e3c-12c5-472f-9dc8-66b22240a440"/>
+            <column name="band_id" value="b24379ea-2211-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Caminando"/>
+            <column name="year" value="1991"/>
+            <column name="price" valueNumeric="16"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="66631e3c-55c5-472f-9dc8-66b22240a440"/>
+            <column name="band_id" value="b24379ea-2211-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Antecedente"/>
+            <column name="year" value="1988"/>
+            <column name="price" valueNumeric="18"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="68931e3c-59c5-111f-9dc8-66b28940a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Valio la pena"/>
+            <column name="year" value="2004"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="77931e3c-59c5-111f-9dc8-66b28940a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="El Cantando"/>
+            <column name="year" value="2007"/>
+            <column name="price" valueNumeric="22"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="77931e3c-59c5-133f-9dc8-66b28940a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Opus"/>
+            <column name="year" value="2019"/>
+            <column name="price" valueNumeric="24"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="77931e3c-59c5-555f-9dc8-66b28940a660"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a902dfc"/>
+            <column name="title" value="Palla Voy"/>
+            <column name="year" value="2022"/>
+            <column name="price" valueNumeric="26"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="11131e3c-59c5-555f-9dc8-66b28940a660"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a992dfc"/>
+            <column name="title" value="Lucille"/>
+            <column name="year" value="1968"/>
+            <column name="price" valueNumeric="15"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="11131e3c-59c5-444f-9dc8-66b28940a660"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a992dfc"/>
+            <column name="title" value="Blues is King"/>
+            <column name="year" value="1967"/>
+            <column name="price" valueNumeric="17"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="45631e3c-59c5-444f-9dc8-66b28940a660"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a992dfc"/>
+            <column name="title" value="Deuces Wild"/>
+            <column name="year" value="1997"/>
+            <column name="price" valueNumeric="19"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="45631e3c-59c5-333f-9dc8-66b33333a660"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a977dfc"/>
+            <column name="title" value="24 Nights"/>
+            <column name="year" value="1991"/>
+            <column name="price" valueNumeric="21"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="45631e3c-59c5-333f-9dc8-66b33333a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a977dfc"/>
+            <column name="title" value="Blackless"/>
+            <column name="year" value="1978"/>
+            <column name="price" valueNumeric="23"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="45631e3c-59c5-333f-9dc1-66b33333a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a977dfc"/>
+            <column name="title" value="Pilgrim"/>
+            <column name="year" value="1998"/>
+            <column name="price" valueNumeric="25"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="45631e3c-59c5-333f-9dc1-66b33333a770"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a977dfc"/>
+            <column name="title" value="Journeyman"/>
+            <column name="year" value="1989"/>
+            <column name="price" valueNumeric="27"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="45631e3c-59c5-333f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a977dfc"/>
+            <column name="title" value="Slowhand"/>
+            <column name="year" value="1977"/>
+            <column name="price" valueNumeric="29"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="41234e3c-59c5-333f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a555dfc"/>
+            <column name="title" value="Doggystyle"/>
+            <column name="year" value="1993"/>
+            <column name="price" valueNumeric="29"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="55534e3c-59c5-333f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a555dfc"/>
+            <column name="title" value="Tha Last Meal"/>
+            <column name="year" value="2000"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="76834e3c-59c5-333f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a555dfc"/>
+            <column name="title" value="BODR"/>
+            <column name="year" value="2022"/>
+            <column name="price" valueNumeric="30"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="99034e3c-59c5-333f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a555dfc"/>
+            <column name="title" value="Bush"/>
+            <column name="year" value="2015"/>
+            <column name="price" valueNumeric="22"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="99034e3c-11c1-111f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a123dfc"/>
+            <column name="title" value="Enter the Wu-Tang (36 Chambers)"/>
+            <column name="year" value="1993"/>
+            <column name="price" valueNumeric="40"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="99034e3c-11c1-111f-9dc1-66b35678a890"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a123dfc"/>
+            <column name="title" value="Iron Flag"/>
+            <column name="year" value="2001"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="99034e3c-11c1-111f-9dc1-66b35678a123"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a123dfc"/>
+            <column name="title" value="The W"/>
+            <column name="year" value="2000"/>
+            <column name="price" valueNumeric="19"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="78034e3c-11c1-111f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a456dfc"/>
+            <column name="title" value="Ready to Die"/>
+            <column name="year" value="1994"/>
+            <column name="price" valueNumeric="22"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="87034e3c-11c1-111f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a456dfc"/>
+            <column name="title" value="Life After Death"/>
+            <column name="year" value="1997"/>
+            <column name="price" valueNumeric="25"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="99884e3c-11c1-111f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a766dfc"/>
+            <column name="title" value="KLR"/>
+            <column name="year" value="1999"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="88774e3c-11c1-111f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a766dfc"/>
+            <column name="title" value="Hold-Up"/>
+            <column name="year" value="2005"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="56454e3c-11c1-155f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a789dfc"/>
+            <column name="title" value="Como Nunca"/>
+            <column name="year" value="2017"/>
+            <column name="price" valueNumeric="28"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="89004e3c-11c1-176f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a789dfc"/>
+            <column name="title" value="Como Siempre"/>
+            <column name="year" value="2014"/>
+            <column name="price" valueNumeric="23"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="89004e3c-11c1-183f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a789dfc"/>
+            <column name="title" value="Goldo Funky"/>
+            <column name="year" value="2020"/>
+            <column name="price" valueNumeric="30"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="66667e3c-11c1-183f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b24379ea-2551-4f0b-827b-bdd66a755dfc"/>
+            <column name="title" value="Lo Necesario"/>
+            <column name="year" value="2010"/>
+            <column name="price" valueNumeric="30"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="12345e3c-11c1-183f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b11119ea-2551-4f0b-827b-bdd66a755dfc"/>
+            <column name="title" value="The Marshall Mathers LP"/>
+            <column name="year" value="2000"/>
+            <column name="price" valueNumeric="40"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="56789e3c-11c1-183f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b11119ea-2551-4f0b-827b-bdd66a755dfc"/>
+            <column name="title" value="The Slim Shady LP"/>
+            <column name="year" value="1999"/>
+            <column name="price" valueNumeric="28"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="98776e3c-11c1-183f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b11119ea-2551-4f0b-827b-bdd66a755dfc"/>
+            <column name="title" value="Encore"/>
+            <column name="year" value="2004"/>
+            <column name="price" valueNumeric="20"/>
+        </insert>
+        <insert tableName="disc">
+            <column name="id" value="54321e3c-11c1-183f-9dc1-66b35678a880"/>
+            <column name="band_id" value="b11119ea-2551-4f0b-827b-bdd66a755dfc"/>
+            <column name="title" value="Revival"/>
+            <column name="year" value="2017"/>
+            <column name="price" valueNumeric="24"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

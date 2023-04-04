@@ -1,4 +1,4 @@
-package com.msproject.ksqlprocessorservice.model;
+package com.msproject.ksqlprocessorservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,8 +11,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MusicDataList {
+public class MusicDTO {
 
-    private List<MusicDataDetail> data;
+    private List<DiscDTO> disc;
 
 }

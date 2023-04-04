@@ -39,10 +39,93 @@
             <column name="country" value="USA"/>
         </insert>
         <insert tableName="band">
+            <column name="id" value="5a660752-ef77-43c6-a50a-e6d903114013"/>
+            <column name="genre_id" value="f7190629-da26-4b7a-b841-de2f27fd958c"/>
+            <column name="name" value="NOFX"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
             <column name="id" value="b24379ea-8976-4f0b-827b-bdd66a902dfc"/>
             <column name="genre_id" value="d22d6586-7fc9-45c8-95d2-1548f0008faf"/>
             <column name="name" value="Desorden Publico"/>
             <column name="country" value="Venezuela"/>
         </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2222-4f0b-827b-bdd66a902dfc"/>
+            <column name="genre_id" value="d3336586-7fc9-45c8-95d2-1548f0008faf"/>
+            <column name="name" value="Hector Lavoe"/>
+            <column name="country" value="Puerto Rico"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2211-4f0b-827b-bdd66a902dfc"/>
+            <column name="genre_id" value="d3336586-7fc9-45c8-95d2-1548f0008faf"/>
+            <column name="name" value="Ruben Blades"/>
+            <column name="country" value="Panama"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a902dfc"/>
+            <column name="genre_id" value="d3336586-7fc9-45c8-95d2-1548f0008faf"/>
+            <column name="name" value="Marc Anthony"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a992dfc"/>
+            <column name="genre_id" value="d3336586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="B.B. King"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a977dfc"/>
+            <column name="genre_id" value="d3336586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="Eric Clapton"/>
+            <column name="country" value="UK"/>
+        </insert>
+
+
+
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a555dfc"/>
+            <column name="genre_id" value="d6676586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="Snoop Dogg"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a123dfc"/>
+            <column name="genre_id" value="d6676586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="Wu-Tang Clan"/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a456dfc"/>
+            <column name="genre_id" value="d6676586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="The Notorious B.I.G."/>
+            <column name="country" value="USA"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a766dfc"/>
+            <column name="genre_id" value="d6676586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="Saian Supa Crew"/>
+            <column name="country" value="France"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a789dfc"/>
+            <column name="genre_id" value="d6676586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="Akapellah"/>
+            <column name="country" value="Venezuela"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b24379ea-2551-4f0b-827b-bdd66a755dfc"/>
+            <column name="genre_id" value="d6676586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="Apache"/>
+            <column name="country" value="Venezuela"/>
+        </insert>
+        <insert tableName="band">
+            <column name="id" value="b11119ea-2551-4f0b-827b-bdd66a755dfc"/>
+            <column name="genre_id" value="d6676586-7fc9-77c8-95d2-1548f0008faf"/>
+            <column name="name" value="Eminem"/>
+            <column name="country" value="USA"/>
+        </insert>
+
+
     </changeSet>
 </databaseChangeLog>
