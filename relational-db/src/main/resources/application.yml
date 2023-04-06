@@ -15,7 +15,7 @@ spring:
     change-log: classpath:db/changelog/liquibase-changelog.yml
     enabled: true
   kafka:
-    bootstrap-servers: localhost:29092,localhost:39092
+    bootstrap-servers: localhost:29092
     consumer:
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer

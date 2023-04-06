@@ -1,9 +1,6 @@
-package com.msproject.ksqlprocessorservice.dto;
+package com.msproject.relationaldb.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -12,6 +9,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class DiscDTO implements Serializable {
 
     private UUID id;

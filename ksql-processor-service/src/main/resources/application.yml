@@ -1,18 +1,33 @@
 server:
-  port: 1111
+  port: 1112
 
 spring:
   kafka:
-    bootstrap-servers: localhost:29092,localhost:39092
-    consumer:
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring:
-          json:
-            trusted:
-              packages: "*"
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    bootstrap-servers: localhost:29092
+  cloud:
+    stream:
+      function:
+        definition: allMusicConsumer; only80sDiscsProcessor; only80sDiscsConsumer; onlyExpensiveDiscsProcessor; onlyExpensiveDiscsConsumer
+      kafka:
+        binder:
+          brokers: localhost:29092
+        streams:
+          binder:
+            configuration:
+              spring.json.trusted.packages: '*'
+
+      bindings:
+        allMusicConsumer-in-0:
+          destination: all-discs-topic
+        only80sDiscsConsumer-in-0:
+          destination: only-80s-discs-topic
+        onlyExpensiveDiscsConsumer-in-0:
+          destination: only-expensive-discs-topic
+        only80sDiscsProcessor-in-0:
+          destination: all-discs-topic
+        only80sDiscsProcessor-out-0:
+          destination: only-80s-discs-topic
+        onlyExpensiveDiscsProcessor-in-0:
+          destination: all-discs-topic
+        onlyExpensiveDiscsProcessor-out-0:
+          destination: only-expensive-discs-topic

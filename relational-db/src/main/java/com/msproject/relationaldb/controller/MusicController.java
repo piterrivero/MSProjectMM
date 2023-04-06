@@ -1,8 +1,8 @@
 package com.msproject.relationaldb.controller;
 
-import com.msproject.relationaldb.dto.MusicDTO;
 import com.msproject.relationaldb.service.MusicService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +20,9 @@ public class MusicController {
     }
 
     @GetMapping
-    public ResponseEntity<MusicDTO> getMusic(){
-        return ResponseEntity.ok(musicService.getMusic());
+    public ResponseEntity<HttpStatus> getMusic(){
+        musicService.getMusic();
+        return new ResponseEntity<>(org.springframework.http.HttpStatus.OK);
     }
 
 }

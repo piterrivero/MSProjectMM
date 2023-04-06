@@ -6,16 +6,14 @@ import com.msproject.relationaldb.kafka.KafkaSender;
 import com.msproject.relationaldb.dto.BandDTO;
 import com.msproject.relationaldb.dto.DiscDTO;
 import com.msproject.relationaldb.dto.GenreDTO;
-import com.msproject.relationaldb.dto.MusicDTO;
 import com.msproject.relationaldb.repository.BandRepository;
 import com.msproject.relationaldb.repository.DiscRepository;
 import com.msproject.relationaldb.repository.GenreRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
+@Slf4j
 public class MusicService {
 
     private final DiscRepository discRepository;
@@ -33,20 +31,10 @@ public class MusicService {
         this.kafkaSender = kafkaSender;
     }
 
-    public MusicDTO getMusic() {
-        MusicDTO musicDTO = new MusicDTO();
-
-        List<DiscDTO> discs = new ArrayList<>();
-
+    public void getMusic() {
         discRepository.findAll().stream().forEach(disc -> {
-            discs.add(getDiscDTO(disc));
+            kafkaSender.sendMessage(KafkaTopicConfig.ALL_DISCS_TOPIC, getDiscDTO(disc));
         });
-
-        musicDTO.setDisc(discs);
-
-        kafkaSender.sendMessage(KafkaTopicConfig.MUSIC_TOPIC, musicDTO);
-
-        return musicDTO;
     }
 
     public DiscDTO getDiscDTO(Disc disc){

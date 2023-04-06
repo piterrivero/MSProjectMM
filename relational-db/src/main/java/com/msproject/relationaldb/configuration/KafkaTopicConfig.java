@@ -8,11 +8,11 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaTopicConfig {
 
-    public static final String MUSIC_TOPIC = "musicTopic";
+    public static final String ALL_DISCS_TOPIC = "all-discs-topic";
 
     @Bean
-    public NewTopic musicTopic() {
-        return TopicBuilder.name(MUSIC_TOPIC)
+    public NewTopic allDiscsTopic() {
+        return TopicBuilder.name(ALL_DISCS_TOPIC)
                 .build();
     }
 
