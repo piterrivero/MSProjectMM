@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/pattern-designs/pom.xml" />
         <option value="$PROJECT_DIR$/relational-db/pom.xml" />
         <option value="$PROJECT_DIR$/ksql-processor-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ksql-processor-service-2/pom.xml" />
       </list>
     </option>
   </component>

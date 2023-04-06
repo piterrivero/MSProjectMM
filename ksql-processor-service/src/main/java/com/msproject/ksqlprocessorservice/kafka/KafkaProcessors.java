@@ -26,4 +26,11 @@ public class KafkaProcessors {
         });
     }
 
+    @Bean
+    public Function<KStream<String, DiscDTO>, KStream<String, DiscDTO>> onlyMetal80sDiscsProcessor(){
+        return kstream -> kstream.filter((key, disc) -> {
+            return disc.getBand().getGenre().getGenre().toUpperCase().contains("METAL");
+        });
+    }
+
 }

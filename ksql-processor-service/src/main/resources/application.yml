@@ -5,9 +5,9 @@ spring:
   kafka:
     bootstrap-servers: localhost:29092
   cloud:
+    function:
+      definition: testConsumer, allMusicConsumer; only80sDiscsProcessor; only80sDiscsConsumer; onlyExpensiveDiscsProcessor; onlyExpensiveDiscsConsumer, onlyMetal80sDiscsProcessor, onlyMetal80sDiscsConsumer
     stream:
-      function:
-        definition: allMusicConsumer; only80sDiscsProcessor; only80sDiscsConsumer; onlyExpensiveDiscsProcessor; onlyExpensiveDiscsConsumer
       kafka:
         binder:
           brokers: localhost:29092
@@ -17,12 +17,16 @@ spring:
               spring.json.trusted.packages: '*'
 
       bindings:
+        testConsumer-in-0:
+          destination: test-topic
         allMusicConsumer-in-0:
           destination: all-discs-topic
         only80sDiscsConsumer-in-0:
           destination: only-80s-discs-topic
         onlyExpensiveDiscsConsumer-in-0:
           destination: only-expensive-discs-topic
+        onlyMetal80sDiscsConsumer-in-0:
+          destination: only-metal-80s-discs-topic
         only80sDiscsProcessor-in-0:
           destination: all-discs-topic
         only80sDiscsProcessor-out-0:
@@ -31,3 +35,7 @@ spring:
           destination: all-discs-topic
         onlyExpensiveDiscsProcessor-out-0:
           destination: only-expensive-discs-topic
+        onlyMetal80sDiscsProcessor-in-0:
+          destination: only-80s-discs-topic
+        onlyMetal80sDiscsProcessor-out-0:
+          destination: only-metal-80s-discs-topic
