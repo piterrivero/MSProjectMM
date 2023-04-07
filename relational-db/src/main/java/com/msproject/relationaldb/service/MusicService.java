@@ -2,7 +2,6 @@ package com.msproject.relationaldb.service;
 
 import com.msproject.relationaldb.configuration.KafkaTopicConfig;
 import com.msproject.relationaldb.domain.*;
-import com.msproject.relationaldb.dto.TestDTO;
 import com.msproject.relationaldb.kafka.KafkaSender;
 import com.msproject.relationaldb.dto.BandDTO;
 import com.msproject.relationaldb.dto.DiscDTO;
@@ -35,9 +34,6 @@ public class MusicService {
     public void getMusic() {
         discRepository.findAll().stream().forEach(disc -> {
             kafkaSender.sendMessage(KafkaTopicConfig.ALL_DISCS_TOPIC, getDiscDTO(disc));
-
-            // kafkaSender.sendMessage("test-topic", new TestDTO("Hola Mundo"));
-
         });
     }
 

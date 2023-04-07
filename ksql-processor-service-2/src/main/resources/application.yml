@@ -5,3 +5,4 @@ spring:
   kafka:
     streams:
       bootstrap-servers: localhost:29092
+      application-id: "spring-kafka-stream-id"

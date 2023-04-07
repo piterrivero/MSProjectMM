@@ -1,13 +1,12 @@
 package com.msproject.ksqlprocessorservice.serdes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.msproject.ksqlprocessorservice.dto.TestDTO;
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Serializer;
 
 import java.util.Map;
 
-public class CustomSerializer implements Serializer<TestDTO> {
+public class CustomSerializer<T> implements Serializer<T> {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
@@ -15,16 +14,16 @@ public class CustomSerializer implements Serializer<TestDTO> {
     }
 
     @Override
-    public byte[] serialize(String topic, TestDTO data) {
+    public byte[] serialize(String topic, T data) {
         try {
-            if (data == null){
+            if (data == null) {
                 System.out.println("Null received at serializing");
                 return null;
             }
             System.out.println("Serializing...");
             return objectMapper.writeValueAsBytes(data);
         } catch (Exception e) {
-            throw new SerializationException("Error when serializing MessageDto to byte[]");
+            throw new SerializationException("Error when serializing to byte[]");
         }
     }
 
