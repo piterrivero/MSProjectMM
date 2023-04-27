@@ -21,10 +21,18 @@ public class KafkaConsumer {
         this.streamsBuilder = streamsBuilder;
     }
 
+    /*
     @PostConstruct
     public void only80sDiscsStreamConsumerTopology() {
         KStream<String, DiscDTO> kStream = streamsBuilder.stream("only-80s-discs-topic", Consumed.with(Serdes.String(), CustomSerdes.discDTO()));
         kStream.foreach((k,disc) -> printLog(true, 1, disc));
+    }
+     */
+
+    @PostConstruct
+    public void numberDiscsOfBandsConsumerTopology() {
+        KStream<String, Long> kStream = streamsBuilder.stream("number-discs-of-bands-topic", Consumed.with(Serdes.String(), Serdes.Long()));
+        kStream.foreach((k,v) -> log.info("{} - {}",k,v));
     }
 
     public void printLog(boolean print, int type, DiscDTO disc){
